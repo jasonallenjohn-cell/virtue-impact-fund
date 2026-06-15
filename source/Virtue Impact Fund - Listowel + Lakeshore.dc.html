@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;}
+    html,body{margin:0;height:100%;background:#2c2c2c;}
+    .vif-eyebrow{font-family:'Jost',sans-serif;font-weight:500;font-size:15px;letter-spacing:0.32em;text-transform:uppercase;}
+    .vif-foot{font-family:'Jost',sans-serif;font-weight:400;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#a6afb4;}
+    .vif-num{font-family:'Cormorant Garamond',serif;font-variant-numeric:tabular-nums;line-height:1;}
+  </style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%" style="position:fixed;inset:0;width:100vw;height:100vh;">
+
+  <section data-label="Cover" data-screen-label="Cover" data-speaker-notes="Listowel proof, Lakeshore scale. Two named opportunities under the Virtue Impact Fund. $202.4M combined capitalization, $3.03M combined equity." style="width:100%;height:100%;position:relative;background:#37536B;display:flex;overflow:hidden;font-family:'Jost',sans-serif;color:#EAF0F2;">
+    <div style="flex:0 0 60%;padding:84px 64px 70px 110px;display:flex;flex-direction:column;justify-content:space-between;">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <img src="assets/logo-cream.png" alt="Virtue Impact Fund" style="height:64px;width:auto;">
+        <span class="vif-eyebrow" style="color:#B89B5A;font-size:13px;">Two-site investment deck</span>
+      </div>
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;font-size:14px;">Listowel + Lakeshore</span></div>
+        <h1 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:62px;line-height:1.06;color:#fff;margin:0;letter-spacing:-0.005em;max-width:760px;">Listowel proof.<br>Lakeshore scale.<br><span style="color:#B7C7AF;font-style:italic;">One focused investment story.</span></h1>
+        <p style="font-size:18px;line-height:1.65;color:#C7D1DA;margin:26px 0 0;max-width:640px;text-wrap:pretty;">Two named opportunities: Listowel as the first deployment and operating proof asset, and Lakeshore as the larger follow-on once its site is acquired.</p>
+      </div>
+      <div style="display:flex;gap:40px;border-top:1px solid rgba(255,255,255,0.16);padding-top:26px;">
+        <div><div class="vif-num" style="font-size:38px;color:#fff;">$202.4M</div><div style="font-size:12.5px;color:#9FB0BA;margin-top:7px;line-height:1.4;max-width:150px;">Combined modeled capitalization</div></div>
+        <div><div class="vif-num" style="font-size:38px;color:#fff;">$3.03M</div><div style="font-size:12.5px;color:#9FB0BA;margin-top:7px;line-height:1.4;max-width:150px;">Combined equity requirement</div></div>
+        <div><div class="vif-num" style="font-size:38px;color:#fff;">302+</div><div style="font-size:12.5px;color:#9FB0BA;margin-top:7px;line-height:1.4;max-width:150px;">Suites, beds, units &amp; keys</div></div>
+        <div><div class="vif-num" style="font-size:38px;color:#fff;">$7.89M</div><div style="font-size:12.5px;color:#9FB0BA;margin-top:7px;line-height:1.4;max-width:150px;">Combined stabilized NOI</div></div>
+      </div>
+    </div>
+    <div style="flex:1;position:relative;background:#2c3e4c;overflow:hidden;">
+      <img src="assets/photos/golden-courtyard.jpg" alt="Wellness development" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(55,83,107,0.85) 0%,rgba(55,83,107,0) 30%);"></div>
+    </div>
+  </section>
+
+  <section data-label="Thesis" data-screen-label="Thesis" data-speaker-notes="The opportunity is intentionally narrow. Need: aging demand is durable. Model: Healhouse adds the operating layer. Scale: Lakeshore shows the larger format." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:104px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">Simple Thesis</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:50px;line-height:1.14;color:#37536B;margin:22px 0 56px;max-width:1280px;text-wrap:pretty;">The opportunity is intentionally narrow: capitalize Listowel and Lakeshore, then let the operating evidence speak.</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;">
+      <div style="border-top:2px solid #37536B;padding-top:28px;"><div class="vif-eyebrow" style="font-size:12px;color:#8FA089;margin-bottom:16px;">Need</div><div style="font-family:'Cormorant Garamond',serif;font-size:31px;color:#37536B;line-height:1.12;margin-bottom:16px;">Aging demand is durable.</div><p style="font-size:17px;line-height:1.6;color:#52606a;margin:0;">Listowel starts with a clear retirement residence program and a care-adjacent daily environment.</p></div>
+      <div style="border-top:2px solid #8FA089;padding-top:28px;"><div class="vif-eyebrow" style="font-size:12px;color:#8FA089;margin-bottom:16px;">Model</div><div style="font-family:'Cormorant Garamond',serif;font-size:31px;color:#37536B;line-height:1.12;margin-bottom:16px;">Healhouse adds the operating layer.</div><p style="font-size:17px;line-height:1.6;color:#52606a;margin:0;">Wellness, hospitality, food, and community programming make each asset more than square footage.</p></div>
+      <div style="border-top:2px solid #B89B5A;padding-top:28px;"><div class="vif-eyebrow" style="font-size:12px;color:#8FA089;margin-bottom:16px;">Scale</div><div style="font-family:'Cormorant Garamond',serif;font-size:31px;color:#37536B;line-height:1.12;margin-bottom:16px;">Lakeshore shows the larger format.</div><p style="font-size:17px;line-height:1.6;color:#52606a;margin:0;">Lakeshore combines retirement, rental, hotel, wellness, and civic value in one plan.</p></div>
+    </div>
+    <div style="position:absolute;left:120px;right:120px;bottom:54px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &middot; Listowel + Lakeshore</span><span class="vif-foot">02 / 13</span></div>
+  </section>
+
+  <section data-label="Listowel" data-screen-label="Listowel Intro" data-speaker-notes="Listowel is the disciplined first-build asset: 48 suites, 88 beds, first claim on deployment capital. $21.64M cost, $1.03M equity." style="width:100%;height:100%;position:relative;background:#F6F4EF;display:flex;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="flex:0 0 54%;padding:100px 64px 100px 120px;display:flex;flex-direction:column;justify-content:center;">
+      <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">Opportunity 01 &middot; Listowel</span></div>
+      <div class="vif-eyebrow" style="color:#B89B5A;font-size:12px;margin-top:18px;">First operating proof</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:52px;line-height:1.06;color:#37536B;margin:14px 0 0;">Listowel is the disciplined first-build asset.</h2>
+      <p style="font-size:18px;line-height:1.7;color:#52606a;margin:26px 0 40px;max-width:560px;text-wrap:pretty;">A focused retirement and wellness project with 48 suites, 88 beds, and the first claim on deployment capital under this two-site plan.</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px;">
+        <div><div class="vif-num" style="font-size:36px;color:#37536B;">$21.64M</div><div style="font-size:13px;color:#6a767f;margin-top:7px;line-height:1.4;">Modeled total project cost</div></div>
+        <div><div class="vif-num" style="font-size:36px;color:#37536B;">48</div><div style="font-size:13px;color:#6a767f;margin-top:7px;line-height:1.4;">Retirement suites</div></div>
+        <div><div class="vif-num" style="font-size:36px;color:#37536B;">88</div><div style="font-size:13px;color:#6a767f;margin-top:7px;line-height:1.4;">Beds in the program</div></div>
+        <div><div class="vif-num" style="font-size:36px;color:#B89B5A;">$1.03M</div><div style="font-size:13px;color:#6a767f;margin-top:7px;line-height:1.4;">Modeled project equity</div></div>
+      </div>
+    </div>
+    <div style="flex:1;position:relative;background:#2c3e4c;overflow:hidden;">
+      <img src="assets/photos/atrium.jpg" alt="Retirement and wellness interior" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(246,244,239,0.5) 0%,rgba(246,244,239,0) 22%);"></div>
+    </div>
+    <div style="position:absolute;left:120px;bottom:54px;"><span class="vif-foot">Virtue Impact Fund &middot; Listowel + Lakeshore</span></div>
+    <div style="position:absolute;right:40px;bottom:40px;background:rgba(21,31,40,0.42);padding:7px 13px;border-radius:6px;"><span class="vif-foot" style="color:#dde4e8;">03 / 13</span></div>
+  </section>
+
+  <section data-label="Listowel Economics" data-screen-label="Listowel Economics" data-speaker-notes="Listowel capital stack: total $21.64M — senior $10.28M, BCH $8.22M, grant $1.03M, equity $1.03M. Stabilized NOI $1.80M, modeled DCR 3.34x." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">Listowel Economics &middot; Capital Stack</span></div>
+    <div style="display:flex;gap:70px;margin-top:30px;align-items:flex-start;">
+      <div style="flex:0 0 40%;">
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:44px;line-height:1.1;color:#37536B;margin:0 0 22px;">A small equity layer supports a meaningful first proof point.</h2>
+        <p style="font-size:17px;line-height:1.7;color:#52606a;margin:0 0 30px;max-width:480px;text-wrap:pretty;">Virtue Impact Fund deploys into the Listowel project equity layer first &mdash; alongside senior debt, BCH funding, and grant support &mdash; to make the first asset financeable and reportable.</p>
+        <div style="display:flex;gap:20px;">
+          <div style="flex:1;background:#37536B;border-radius:12px;padding:24px 26px;color:#fff;"><div class="vif-eyebrow" style="font-size:11px;color:#B7C7AF;margin-bottom:10px;">Stabilized NOI</div><div class="vif-num" style="font-size:42px;color:#fff;">$1.80M</div></div>
+          <div style="flex:1;background:#fff;border:1px solid #E7E2D8;border-radius:12px;padding:24px 26px;"><div class="vif-eyebrow" style="font-size:11px;color:#8FA089;margin-bottom:10px;">Modeled DCR</div><div class="vif-num" style="font-size:42px;color:#37536B;">3.34x</div></div>
+        </div>
+      </div>
+      <div style="flex:1;background:#fff;border:1px solid #E7E2D8;border-radius:14px;padding:42px 44px;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:22px;"><span class="vif-eyebrow" style="font-size:12px;color:#6a767f;">Total project cost</span><span class="vif-num" style="font-size:40px;color:#37536B;">$21.64M</span></div>
+        <div style="display:flex;height:44px;border-radius:7px;overflow:hidden;margin-bottom:30px;">
+          <div style="flex:10.28;background:#37536B;"></div><div style="flex:8.22;background:#8FA089;"></div><div style="flex:1.03;background:#C7D1DA;"></div><div style="flex:1.03;background:#B89B5A;"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:center;gap:16px;padding:15px 0;border-top:1px solid rgba(55,83,107,0.14);"><span style="width:14px;height:14px;border-radius:3px;background:#37536B;"></span><span style="flex:1;font-size:17px;color:#243039;">Senior loan</span><span class="vif-num" style="font-size:24px;color:#37536B;">$10.28M</span></div>
+          <div style="display:flex;align-items:center;gap:16px;padding:15px 0;border-top:1px solid rgba(55,83,107,0.14);"><span style="width:14px;height:14px;border-radius:3px;background:#8FA089;"></span><span style="flex:1;font-size:17px;color:#243039;">BCH layer</span><span class="vif-num" style="font-size:24px;color:#37536B;">$8.22M</span></div>
+          <div style="display:flex;align-items:center;gap:16px;padding:15px 0;border-top:1px solid rgba(55,83,107,0.14);"><span style="width:14px;height:14px;border-radius:3px;background:#C7D1DA;"></span><span style="flex:1;font-size:17px;color:#243039;">Grant support</span><span class="vif-num" style="font-size:24px;color:#37536B;">$1.03M</span></div>
+          <div style="display:flex;align-items:center;gap:16px;padding:15px 0;border-top:1px solid rgba(55,83,107,0.14);border-bottom:1px solid rgba(55,83,107,0.14);"><span style="width:14px;height:14px;border-radius:3px;background:#B89B5A;"></span><span style="flex:1;font-size:17px;color:#243039;font-weight:500;">Project equity</span><span class="vif-num" style="font-size:24px;color:#8C6A30;">$1.03M</span></div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:#8a949c;margin:26px 0 0;letter-spacing:0.02em;">Figures are modeled and remain subject to diligence, lender review, offering documents, and counsel.</p>
+    <div style="position:absolute;left:120px;right:120px;bottom:42px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &middot; Listowel + Lakeshore</span><span class="vif-foot">04 / 13</span></div>
+  </section>
+
+  <section data-label="Listowel Proof" data-screen-label="Listowel Proof" data-speaker-notes="Listowel gives a concrete first asset before capital moves to Lakeshore. Operations, capital, and reporting proof." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:104px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">Listowel Proof Points &middot; Evidence First</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:48px;line-height:1.12;color:#37536B;margin:22px 0 56px;max-width:1180px;text-wrap:pretty;">Listowel gives investors a concrete first asset before capital moves toward the larger Lakeshore opportunity.</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:14px;padding:40px 38px;"><div class="vif-eyebrow" style="font-size:12px;color:#8FA089;margin-bottom:18px;">Operations</div><div style="font-family:'Cormorant Garamond',serif;font-size:30px;color:#37536B;margin-bottom:14px;">Retirement + wellness.</div><p style="font-size:16px;line-height:1.6;color:#52606a;margin:0;">Tests the resident experience, staffing logic, and daily Healhouse programming in a focused format.</p></div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:14px;padding:40px 38px;"><div class="vif-eyebrow" style="font-size:12px;color:#8FA089;margin-bottom:18px;">Capital</div><div style="font-family:'Cormorant Garamond',serif;font-size:30px;color:#37536B;margin-bottom:14px;">BCH-enabled stack.</div><p style="font-size:16px;line-height:1.6;color:#52606a;margin:0;">Demonstrates how mission-aligned financing can reduce the required equity burden.</p></div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:14px;padding:40px 38px;"><div class="vif-eyebrow" style="font-size:12px;color:#8FA089;margin-bottom:18px;">Reporting</div><div style="font-family:'Cormorant Garamond',serif;font-size:30px;color:#37536B;margin-bottom:14px;">Reportable proof.</div><p style="font-size:16px;line-height:1.6;color:#52606a;margin:0;">Creates a first example for lender confidence, investor updates, and Lakeshore diligence.</p></div>
+    </div>
+    <div style="position:absolute;left:120px;right:120px;bottom:54px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &middot; Listowel + Lakeshore</span><span class="vif-foot">05 / 13</span></div>
+  </section>
+
+  <section data-label="Lakeshore" data-screen-label="Lakeshore Intro" data-speaker-notes="Lakeshore carries the model into a larger civic asset after Listowel. Greenfield site still needs to be acquired. $180.73M cost, 254 units/keys, $2.00M equity." style="width:100%;height:100%;position:relative;background:#F6F4EF;display:flex;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="flex:0 0 54%;padding:100px 64px 100px 120px;display:flex;flex-direction:column;justify-content:center;">
+      <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">Opportunity 02 &middot; Lakeshore</span></div>
+      <div class="vif-eyebrow" style="color:#B89B5A;font-size:12px;margin-top:18px;">Follow-on opportunity</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:50px;line-height:1.08;color:#37536B;margin:14px 0 0;">Lakeshore carries the same model into a larger civic asset.</h2>
+      <p style="font-size:18px;line-height:1.7;color:#52606a;margin:26px 0 40px;max-width:560px;text-wrap:pretty;">Lakeshore remains a second deployment opportunity. The greenfield site still needs to be acquired before development proceeds.</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px;">
+        <div><div class="vif-num" style="font-size:34px;color:#37536B;">$180.73M</div><div style="font-size:13px;color:#6a767f;margin-top:7px;line-height:1.4;">Modeled total project cost</div></div>
+        <div><div class="vif-num" style="font-size:34px;color:#37536B;">254</div><div style="font-size:13px;color:#6a767f;margin-top:7px;line-height:1.4;">Units and keys</div></div>
+        <div><div class="vif-num" style="font-size:34px;color:#37536B;">215,638</div><div style="font-size:13px;color:#6a767f;margin-top:7px;line-height:1.4;">Modeled gross floor area</div></div>
+        <div><div class="vif-num" style="font-size:34px;color:#B89B5A;">$2.00M</div><div style="font-size:13px;color:#6a767f;margin-top:7px;line-height:1.4;">Modeled project equity</div></div>
+      </div>
+    </div>
+    <div style="flex:1;position:relative;background:#2c3e4c;overflow:hidden;">
+      <img src="assets/photos/towers.jpg" alt="Mixed-use development at scale" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(246,244,239,0.5) 0%,rgba(246,244,239,0) 22%),linear-gradient(0deg,rgba(55,83,107,0.32),rgba(55,83,107,0.12));"></div>
+    </div>
+    <div style="position:absolute;left:120px;bottom:54px;"><span class="vif-foot">Virtue Impact Fund &middot; Listowel + Lakeshore</span></div>
+    <div style="position:absolute;right:40px;bottom:40px;background:rgba(21,31,40,0.42);padding:7px 13px;border-radius:6px;"><span class="vif-foot" style="color:#dde4e8;">06 / 13</span></div>
+  </section>
+  <section data-label="Lakeshore Economics" data-screen-label="Lakeshore Economics" data-speaker-notes="Lakeshore capital stack: total $180.73M — senior $85.05M, BCH $68.04M, grant $8.50M, Green P in-kind $6.50M, equity $2.00M. NOI $6.09M, DCR 1.37x. Subject to site acquisition." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">Lakeshore Economics &middot; Capital Stack</span></div>
+    <div style="display:flex;gap:70px;margin-top:30px;align-items:flex-start;">
+      <div style="flex:0 0 40%;">
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:44px;line-height:1.1;color:#37536B;margin:0 0 22px;">The flagship relies on a layered capital structure, subject to site acquisition.</h2>
+        <p style="font-size:17px;line-height:1.7;color:#52606a;margin:0 0 30px;max-width:480px;text-wrap:pretty;">After Listowel, Virtue Impact Fund can deploy into the Lakeshore project equity layer once the site is controlled and the development path is ready to proceed.</p>
+        <div style="display:flex;gap:20px;">
+          <div style="flex:1;background:#37536B;border-radius:12px;padding:24px 26px;color:#fff;"><div class="vif-eyebrow" style="font-size:11px;color:#B7C7AF;margin-bottom:10px;">Stabilized NOI</div><div class="vif-num" style="font-size:42px;color:#fff;">$6.09M</div></div>
+          <div style="flex:1;background:#fff;border:1px solid #E7E2D8;border-radius:12px;padding:24px 26px;"><div class="vif-eyebrow" style="font-size:11px;color:#8FA089;margin-bottom:10px;">Modeled DCR</div><div class="vif-num" style="font-size:42px;color:#37536B;">1.37x</div></div>
+        </div>
+      </div>
+      <div style="flex:1;background:#fff;border:1px solid #E7E2D8;border-radius:14px;padding:38px 44px;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:20px;"><span class="vif-eyebrow" style="font-size:12px;color:#6a767f;">Total project cost</span><span class="vif-num" style="font-size:40px;color:#37536B;">$180.73M</span></div>
+        <div style="display:flex;height:42px;border-radius:7px;overflow:hidden;margin-bottom:26px;">
+          <div style="flex:85.05;background:#37536B;"></div><div style="flex:68.04;background:#8FA089;"></div><div style="flex:8.5;background:#C7D1DA;"></div><div style="flex:6.5;background:#E5E0D6;"></div><div style="flex:2;background:#B89B5A;"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:center;gap:16px;padding:12px 0;border-top:1px solid rgba(55,83,107,0.14);"><span style="width:14px;height:14px;border-radius:3px;background:#37536B;"></span><span style="flex:1;font-size:16px;color:#243039;">Senior loan</span><span class="vif-num" style="font-size:22px;color:#37536B;">$85.05M</span></div>
+          <div style="display:flex;align-items:center;gap:16px;padding:12px 0;border-top:1px solid rgba(55,83,107,0.14);"><span style="width:14px;height:14px;border-radius:3px;background:#8FA089;"></span><span style="flex:1;font-size:16px;color:#243039;">BCH layer</span><span class="vif-num" style="font-size:22px;color:#37536B;">$68.04M</span></div>
+          <div style="display:flex;align-items:center;gap:16px;padding:12px 0;border-top:1px solid rgba(55,83,107,0.14);"><span style="width:14px;height:14px;border-radius:3px;background:#C7D1DA;"></span><span style="flex:1;font-size:16px;color:#243039;">Grant support</span><span class="vif-num" style="font-size:22px;color:#37536B;">$8.50M</span></div>
+          <div style="display:flex;align-items:center;gap:16px;padding:12px 0;border-top:1px solid rgba(55,83,107,0.14);"><span style="width:14px;height:14px;border-radius:3px;background:#E5E0D6;"></span><span style="flex:1;font-size:16px;color:#243039;">Green P in-kind value</span><span class="vif-num" style="font-size:22px;color:#37536B;">$6.50M</span></div>
+          <div style="display:flex;align-items:center;gap:16px;padding:12px 0;border-top:1px solid rgba(55,83,107,0.14);border-bottom:1px solid rgba(55,83,107,0.14);"><span style="width:14px;height:14px;border-radius:3px;background:#B89B5A;"></span><span style="flex:1;font-size:16px;color:#243039;font-weight:500;">Project equity</span><span class="vif-num" style="font-size:22px;color:#8C6A30;">$2.00M</span></div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:#8a949c;margin:22px 0 0;letter-spacing:0.02em;">Figures are modeled and remain subject to diligence, lender review, offering documents, and counsel.</p>
+    <div style="position:absolute;left:120px;right:120px;bottom:42px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &middot; Listowel + Lakeshore</span><span class="vif-foot">07 / 13</span></div>
+  </section>
+
+  <section data-label="Lakeshore Program" data-screen-label="Lakeshore Program" data-speaker-notes="Program mix: retirement 84, rental 84, hospitality 86, and a Healhouse podium of wellness, food, and community amenities." style="width:100%;height:100%;position:relative;background:#37536B;padding:104px 120px;overflow:hidden;font-family:'Jost',sans-serif;color:#EAF0F2;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#B89B5A;">Lakeshore Program &middot; Program Mix</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:48px;line-height:1.12;color:#fff;margin:22px 0 56px;max-width:1120px;text-wrap:pretty;">Housing, hospitality, wellness, and public value are designed to work together.</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:38px 34px;"><div class="vif-num" style="font-size:58px;color:#fff;margin-bottom:14px;">84</div><div style="font-family:'Cormorant Garamond',serif;font-size:26px;color:#B7C7AF;margin-bottom:12px;">Retirement</div><p style="font-size:14.5px;line-height:1.55;color:#C7D1DA;margin:0;">Modeled retirement component within the flagship mix.</p></div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:38px 34px;"><div class="vif-num" style="font-size:58px;color:#fff;margin-bottom:14px;">84</div><div style="font-family:'Cormorant Garamond',serif;font-size:26px;color:#B7C7AF;margin-bottom:12px;">Rental</div><p style="font-size:14.5px;line-height:1.55;color:#C7D1DA;margin:0;">Purpose-built rental housing exposure in the plan.</p></div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:38px 34px;"><div class="vif-num" style="font-size:58px;color:#fff;margin-bottom:14px;">86</div><div style="font-family:'Cormorant Garamond',serif;font-size:26px;color:#B7C7AF;margin-bottom:12px;">Hospitality</div><p style="font-size:14.5px;line-height:1.55;color:#C7D1DA;margin:0;">Hotel and Healhouse-enabled keys in the operating program.</p></div>
+      <div style="background:rgba(184,155,90,0.16);border:1px solid rgba(184,155,90,0.5);border-radius:14px;padding:38px 34px;"><div class="vif-num" style="font-size:58px;color:#CDB088;margin-bottom:14px;">HH</div><div style="font-family:'Cormorant Garamond',serif;font-size:26px;color:#CDB088;margin-bottom:12px;">Podium</div><p style="font-size:14.5px;line-height:1.55;color:#dbe3e8;margin:0;">Wellness, food, and community-facing amenities that carry the brand.</p></div>
+    </div>
+    <div style="position:absolute;left:120px;right:120px;bottom:54px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot" style="color:#8b9aa4;">Virtue Impact Fund &middot; Listowel + Lakeshore</span><span class="vif-foot" style="color:#8b9aa4;">08 / 13</span></div>
+  </section>
+
+  <section data-label="Portfolio Snapshot" data-screen-label="Portfolio Snapshot" data-speaker-notes="Two assets only: Listowel first deployment, Lakeshore follow-on flagship pending site acquisition." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:104px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">Portfolio Snapshot &middot; Two Assets Only</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:46px;line-height:1.12;color:#37536B;margin:22px 0 46px;max-width:1160px;text-wrap:pretty;">The package is intentionally focused: Listowel first, then Lakeshore when the site is acquired.</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;">
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:16px;padding:44px 46px;border-top:3px solid #37536B;">
+        <div class="vif-eyebrow" style="font-size:12px;color:#8FA089;margin-bottom:14px;">Priority 01 / Listowel</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:36px;color:#37536B;margin-bottom:10px;">First deployment</div>
+        <p style="font-size:16px;line-height:1.6;color:#52606a;margin:0 0 30px;">Retirement + Healhouse proof in Listowel, Ontario. Fund capital is directed here first.</p>
+        <div style="display:flex;gap:30px;border-top:1px solid rgba(55,83,107,0.14);padding-top:24px;">
+          <div><div class="vif-num" style="font-size:30px;color:#37536B;">$21.64M</div><div style="font-size:13px;color:#6a767f;margin-top:6px;">Total project cost</div></div>
+          <div><div class="vif-num" style="font-size:30px;color:#37536B;">48 / 88</div><div style="font-size:13px;color:#6a767f;margin-top:6px;">Suites / beds</div></div>
+          <div><div class="vif-num" style="font-size:30px;color:#8C6A30;">$1.03M</div><div style="font-size:13px;color:#6a767f;margin-top:6px;">Project equity</div></div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:16px;padding:44px 46px;border-top:3px solid #B89B5A;">
+        <div class="vif-eyebrow" style="font-size:12px;color:#8FA089;margin-bottom:14px;">Priority 02 / Lakeshore</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:36px;color:#37536B;margin-bottom:10px;">Follow-on flagship</div>
+        <p style="font-size:16px;line-height:1.6;color:#52606a;margin:0 0 30px;">Retirement, rental, hospitality, and Healhouse podium. Site acquisition is required before development proceeds.</p>
+        <div style="display:flex;gap:30px;border-top:1px solid rgba(55,83,107,0.14);padding-top:24px;">
+          <div><div class="vif-num" style="font-size:30px;color:#37536B;">$180.73M</div><div style="font-size:13px;color:#6a767f;margin-top:6px;">Total project cost</div></div>
+          <div><div class="vif-num" style="font-size:30px;color:#37536B;">254</div><div style="font-size:13px;color:#6a767f;margin-top:6px;">Units / keys</div></div>
+          <div><div class="vif-num" style="font-size:30px;color:#8C6A30;">$2.00M</div><div style="font-size:13px;color:#6a767f;margin-top:6px;">Project equity</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="position:absolute;left:120px;right:120px;bottom:54px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &middot; Listowel + Lakeshore</span><span class="vif-foot">09 / 13</span></div>
+  </section>
+  <section data-label="Fund Deployment" data-screen-label="Fund Deployment" data-speaker-notes="Capital is raised into the fund, deployed to Listowel first ($1.03M equity), then Lakeshore ($2.00M) after site acquisition. Distributions flow project-to-fund per offering documents." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">Fund Deployment &middot; Deal Structure</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:42px;line-height:1.12;color:#37536B;margin:20px 0 40px;max-width:1180px;text-wrap:pretty;">Virtue Impact Fund invests into each project through its project equity layer, with deployments sequenced by readiness.</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:14px;padding:32px 34px;"><div style="display:flex;align-items:baseline;gap:14px;margin-bottom:12px;"><span class="vif-num" style="font-size:30px;color:#B89B5A;">1</span><span class="vif-eyebrow" style="font-size:11px;color:#8FA089;">Investor capital</span></div><div style="font-family:'Cormorant Garamond',serif;font-size:25px;color:#37536B;margin-bottom:10px;">Fund-level subscription.</div><p style="font-size:15px;line-height:1.55;color:#52606a;margin:0;">Investor capital is raised into Virtue Impact Fund, then allocated only to the two named opportunities in this deck.</p></div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:14px;padding:32px 34px;"><div style="display:flex;align-items:baseline;gap:14px;margin-bottom:12px;"><span class="vif-num" style="font-size:30px;color:#B89B5A;">2</span><span class="vif-eyebrow" style="font-size:11px;color:#8FA089;">First deployment</span></div><div style="font-family:'Cormorant Garamond',serif;font-size:25px;color:#37536B;margin-bottom:10px;">Listowel first.</div><p style="font-size:15px;line-height:1.55;color:#52606a;margin:0;">The first allocation supports Listowel&rsquo;s modeled $1.03M project equity, alongside senior debt, BCH funding, and grant support.</p></div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:14px;padding:32px 34px;"><div style="display:flex;align-items:baseline;gap:14px;margin-bottom:12px;"><span class="vif-num" style="font-size:30px;color:#B89B5A;">3</span><span class="vif-eyebrow" style="font-size:11px;color:#8FA089;">Follow-on deployment</span></div><div style="font-family:'Cormorant Garamond',serif;font-size:25px;color:#37536B;margin-bottom:10px;">Lakeshore second.</div><p style="font-size:15px;line-height:1.55;color:#52606a;margin:0;">The follow-on allocation supports Lakeshore&rsquo;s modeled $2.00M project equity after site acquisition and development readiness are confirmed.</p></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;">
+      <div style="background:#EEEAE0;border-radius:14px;padding:26px 32px;display:flex;gap:22px;align-items:center;"><span class="vif-eyebrow" style="font-size:11px;color:#8FA089;writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:0.2em;">Listowel</span><div><div style="font-family:'Cormorant Garamond',serif;font-size:23px;color:#37536B;margin-bottom:6px;">First asset cash flow.</div><p style="font-size:14.5px;line-height:1.55;color:#52606a;margin:0;">Project economics are expected to flow from Listowel operations to its project entity, then through the Virtue Impact Fund structure per final offering documents.</p></div></div>
+      <div style="background:#EEEAE0;border-radius:14px;padding:26px 32px;display:flex;gap:22px;align-items:center;"><span class="vif-eyebrow" style="font-size:11px;color:#8FA089;writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:0.2em;">Lakeshore</span><div><div style="font-family:'Cormorant Garamond',serif;font-size:23px;color:#37536B;margin-bottom:6px;">Second asset cash flow.</div><p style="font-size:14.5px;line-height:1.55;color:#52606a;margin:0;">Lakeshore economics follow the same project-to-fund path once the greenfield site is acquired, financed, developed, and stabilized.</p></div></div>
+    </div>
+    <div style="position:absolute;left:120px;right:120px;bottom:42px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &middot; Listowel + Lakeshore</span><span class="vif-foot">10 / 13</span></div>
+  </section>
+
+  <section data-label="Combined Stack" data-screen-label="Combined Stack" data-speaker-notes="Combined sources: $95.33M senior, $76.26M BCH, $9.53M grant, $6.50M Green P. Total capitalization $202.37M, equity $3.03M, NOI $7.89M." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">Combined Stack &middot; Modeled Sources</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:44px;line-height:1.12;color:#37536B;margin:20px 0 42px;max-width:1140px;text-wrap:pretty;">The two-site capital stack does the heavy lifting, with equity deployed in order of readiness.</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px;">
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:14px;padding:30px 30px;border-top:3px solid #37536B;"><div class="vif-num" style="font-size:42px;color:#37536B;">$95.33M</div><div style="font-size:14px;color:#6a767f;margin-top:10px;line-height:1.45;">Combined modeled senior loans</div></div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:14px;padding:30px 30px;border-top:3px solid #8FA089;"><div class="vif-num" style="font-size:42px;color:#37536B;">$76.26M</div><div style="font-size:14px;color:#6a767f;margin-top:10px;line-height:1.45;">Combined BCH layer</div></div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:14px;padding:30px 30px;border-top:3px solid #C7D1DA;"><div class="vif-num" style="font-size:42px;color:#37536B;">$9.53M</div><div style="font-size:14px;color:#6a767f;margin-top:10px;line-height:1.45;">Combined grant support</div></div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:14px;padding:30px 30px;border-top:3px solid #E5E0D6;"><div class="vif-num" style="font-size:42px;color:#37536B;">$6.50M</div><div style="font-size:14px;color:#6a767f;margin-top:10px;line-height:1.45;">Lakeshore Green P in-kind value</div></div>
+    </div>
+    <div style="display:flex;background:#37536B;border-radius:14px;margin-top:24px;overflow:hidden;">
+      <div style="flex:1;padding:32px 38px;"><div class="vif-eyebrow" style="font-size:11px;color:#B7C7AF;margin-bottom:10px;">Total capitalization</div><div class="vif-num" style="font-size:46px;color:#fff;">$202.37M</div><div style="font-size:13px;color:#9FB0BA;margin-top:8px;">Combined Listowel and Lakeshore project costs</div></div>
+      <div style="flex:1;padding:32px 38px;border-left:1px solid rgba(255,255,255,0.14);"><div class="vif-eyebrow" style="font-size:11px;color:#CDB088;margin-bottom:10px;">Project equity</div><div class="vif-num" style="font-size:46px;color:#CDB088;">$3.03M</div><div style="font-size:13px;color:#9FB0BA;margin-top:8px;">Listowel first, Lakeshore follow-on after acquisition</div></div>
+      <div style="flex:1;padding:32px 38px;border-left:1px solid rgba(255,255,255,0.14);"><div class="vif-eyebrow" style="font-size:11px;color:#B7C7AF;margin-bottom:10px;">Stabilized NOI</div><div class="vif-num" style="font-size:46px;color:#fff;">$7.89M</div><div style="font-size:13px;color:#9FB0BA;margin-top:8px;">Combined stabilized NOI from the prior model</div></div>
+    </div>
+    <div style="position:absolute;left:120px;right:120px;bottom:42px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &middot; Listowel + Lakeshore</span><span class="vif-foot">11 / 13</span></div>
+  </section>
+
+  <section data-label="Healhouse Layer" data-screen-label="Healhouse Layer" data-speaker-notes="Healhouse turns the assets into lived community infrastructure: care-adjacent modern aging, place-based permanence, repeatable evidence-first model." style="width:100%;height:100%;position:relative;background:#1d2a34;overflow:hidden;font-family:'Jost',sans-serif;color:#fff;">
+    <img src="assets/photos/healing-garden.jpg" alt="Healhouse healing garden" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,28,34,0.82) 0%,rgba(20,28,34,0.5) 45%,rgba(20,28,34,0.86) 100%);"></div>
+    <div style="position:relative;z-index:1;height:100%;padding:96px 120px;display:flex;flex-direction:column;">
+      <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#B89B5A;">Healhouse Layer &middot; Operating Value</span></div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:50px;line-height:1.1;color:#fff;margin:22px 0 14px;max-width:920px;text-wrap:pretty;">Healhouse turns the assets into lived community infrastructure.</h2>
+      <p style="font-size:18px;line-height:1.65;color:#d7dde1;margin:0;max-width:860px;text-wrap:pretty;">The operating layer gives investors a cleaner story: modern aging, wellness, hospitality, and community programming &mdash; anchored first in Listowel, then scaled through Lakeshore after site acquisition.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:auto;">
+        <div style="background:rgba(20,28,34,0.55);border:1px solid rgba(255,255,255,0.16);border-radius:14px;padding:32px 34px;"><div class="vif-eyebrow" style="font-size:11px;color:#B7C7AF;margin-bottom:14px;">Care-adjacent</div><div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:#fff;margin-bottom:12px;">Modern aging.</div><p style="font-size:14.5px;line-height:1.55;color:#C7D1DA;margin:0;">Daily wellness and hospitality touchpoints support a better resident and guest experience.</p></div>
+        <div style="background:rgba(20,28,34,0.55);border:1px solid rgba(255,255,255,0.16);border-radius:14px;padding:32px 34px;"><div class="vif-eyebrow" style="font-size:11px;color:#B7C7AF;margin-bottom:14px;">Place-based</div><div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:#fff;margin-bottom:12px;">Local permanence.</div><p style="font-size:14.5px;line-height:1.55;color:#C7D1DA;margin:0;">Mission-aligned stewardship keeps the assets tied to community usefulness.</p></div>
+        <div style="background:rgba(20,28,34,0.55);border:1px solid rgba(255,255,255,0.16);border-radius:14px;padding:32px 34px;"><div class="vif-eyebrow" style="font-size:11px;color:#B7C7AF;margin-bottom:14px;">Repeatable</div><div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:#fff;margin-bottom:12px;">Evidence first.</div><p style="font-size:14.5px;line-height:1.55;color:#C7D1DA;margin:0;">Listowel creates proof; Lakeshore shows the same thesis at civic scale.</p></div>
+      </div>
+    </div>
+    <div style="position:absolute;left:120px;right:120px;bottom:42px;z-index:1;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot" style="color:#aeb8bd;">Virtue Impact Fund &middot; Listowel + Lakeshore</span><span class="vif-foot" style="color:#aeb8bd;">12 / 13</span></div>
+  </section>
+
+  <section data-label="Closing" data-screen-label="Closing" data-speaker-notes="Focused ask: back Listowel first as proof, Lakeshore as the follow-on scale opportunity after site acquisition." style="width:100%;height:100%;position:relative;background:#37536B;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;color:#EAF0F2;">
+    <div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#B89B5A;">Closing Frame &middot; Focused Ask</span></div><img src="assets/logo-cream.png" alt="Virtue Impact Fund" style="height:58px;width:auto;"></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:54px;line-height:1.08;color:#fff;margin:40px 0 56px;max-width:1080px;text-wrap:pretty;">Back Listowel first, with Lakeshore as the follow-on scale opportunity.</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;">
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:42px 44px;">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:18px;"><span style="font-family:'Cormorant Garamond',serif;font-size:32px;color:#fff;">Listowel</span><span class="vif-eyebrow" style="font-size:13px;color:#B7C7AF;">Proof</span></div>
+        <p style="font-size:16px;line-height:1.65;color:#C7D1DA;margin:0;">Fund the project equity layer for the first retirement and Healhouse asset, then use that evidence to support the next deployment.</p>
+      </div>
+      <div style="background:rgba(184,155,90,0.16);border:1px solid rgba(184,155,90,0.5);border-radius:16px;padding:42px 44px;">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:18px;"><span style="font-family:'Cormorant Garamond',serif;font-size:32px;color:#CDB088;">Lakeshore</span><span class="vif-eyebrow" style="font-size:13px;color:#CDB088;">Scale</span></div>
+        <p style="font-size:16px;line-height:1.65;color:#dbe3e8;margin:0;">Advance the mixed-use flagship after the greenfield site is acquired and the development path is ready.</p>
+      </div>
+    </div>
+    <p style="font-size:14px;line-height:1.6;color:#8FA089;margin:46px 0 0;">This deck is limited to the Listowel and Lakeshore opportunities under the Virtue Impact Fund brand. Figures are modeled and subject to diligence, lender review, offering documents, and counsel.</p>
+    <div style="position:absolute;left:120px;right:120px;bottom:42px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot" style="color:#8b9aa4;">Virtue Impact Fund &middot; Listowel + Lakeshore</span><span class="vif-foot" style="color:#8b9aa4;">13 / 13</span></div>
+  </section>
+</x-import>
+</x-dc>
+</body>
+</html>

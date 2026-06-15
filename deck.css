@@ -1,0 +1,158 @@
+/* ============================================================================
+   Virtue Impact Fund — shared deck runtime styles
+   Reproduces the Claude Design "deck-stage" behaviour with no dependencies:
+   a fixed 1920x1080 canvas scaled to fit the viewport (letterboxed), one
+   slide shown at a time, and a print mode that lays every slide out as its
+   own full-bleed 16:9 page for a clean, undistorted PDF.
+   ----------------------------------------------------------------------------
+   Slide markup itself lives in each deck's <div class="slide"> blocks and is
+   copied verbatim from the design source — do not restyle it here.
+   ========================================================================== */
+
+:root {
+  --deck-w: 1920px;
+  --deck-h: 1080px;
+  --deck-letterbox: #2c2c2c;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--deck-letterbox); }
+
+/* The viewport host. Centres the canvas and clips the letterbox margins. */
+.stage {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--deck-letterbox);
+}
+
+/* The fixed design-size canvas. deck.js scales this with transform:scale(). */
+.canvas {
+  position: relative;
+  width: var(--deck-w);
+  height: var(--deck-h);
+  flex: 0 0 auto;
+  transform-origin: center center;
+  background: #000;
+}
+
+/* Every slide is stacked at the same spot; only .active is shown. State
+   (inputs, scroll, etc.) is preserved — slides are hidden, not unmounted. */
+.slide {
+  position: absolute;
+  inset: 0;
+  width: var(--deck-w);
+  height: var(--deck-h);
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.32s ease;
+}
+.slide.active { visibility: visible; opacity: 1; }
+
+/* The slide's own <section> fills the slide box (it carries width/height:100%
+   inline in the source, which resolves against this 1920x1080 box). */
+.slide > section { width: 100%; height: 100%; }
+
+/* Bottom-centre slide counter + hint. Fades out when idle. */
+.deck-overlay {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  transform: translate(-50%, 6px);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: rgba(20, 28, 34, 0.72);
+  color: #EAF0F2;
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.deck-overlay[data-visible] { opacity: 1; transform: translate(-50%, 0); }
+.deck-overlay .deck-count { font-variant-numeric: tabular-nums; color: #fff; }
+.deck-overlay .deck-sep { width: 1px; height: 14px; background: rgba(255,255,255,0.22); }
+.deck-overlay .deck-hint { color: #9FB0BA; text-transform: uppercase; font-size: 11px; letter-spacing: 0.18em; }
+
+/* Small "back to hub" link, top-left. */
+.deck-home {
+  position: fixed;
+  top: 18px;
+  left: 20px;
+  z-index: 50;
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #EAF0F2;
+  background: rgba(20, 28, 34, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 8px 14px;
+  border-radius: 999px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.stage:hover ~ .deck-home,
+.deck-home:hover,
+.deck-home[data-visible] { opacity: 0.85; }
+.deck-home:hover { opacity: 1; }
+
+/* ----------------------------------------------------------------------------
+   PRINT — every slide becomes its own 1920x1080 page, unscaled, full colour.
+   This is the reliable "Save as PDF" path: Chrome / Edge "Save as PDF" with
+   "Margins: None" and "Background graphics: on" yields one slide per page,
+   pixel-faithful, no scaling drift.
+   -------------------------------------------------------------------------- */
+@page { size: 1920px 1080px; margin: 0; }
+
+@media print {
+  html, body {
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .stage { position: static; display: block; overflow: visible; background: none; }
+  .canvas {
+    position: static;
+    transform: none !important;
+    width: auto;
+    height: auto;
+    background: none;
+  }
+  .slide {
+    position: relative;
+    inset: auto;
+    width: var(--deck-w);
+    height: var(--deck-h);
+    visibility: visible !important;
+    opacity: 1 !important;
+    transition: none !important;
+    overflow: hidden;
+    break-after: page;
+    page-break-after: always;
+    break-inside: avoid;
+  }
+  .slide:last-child { break-after: auto; page-break-after: auto; }
+  .deck-overlay, .deck-home { display: none !important; }
+  /* Freeze any entrance animations so print captures the final state. */
+  *, *::before, *::after {
+    animation-duration: 0.001s !important;
+    animation-delay: -1s !important;
+    transition-duration: 0s !important;
+  }
+}
