@@ -60,6 +60,23 @@
   .card .open{font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-deep);font-weight:500;}
   .card:hover .open{color:var(--navy);}
 
+  /* featured (platform) card */
+  .feature{display:grid;grid-template-columns:1.1fr 1.4fr;background:var(--navy);border:1px solid var(--navy-deep);border-radius:18px;overflow:hidden;margin-bottom:26px;color:#EAF0F2;
+    transition:transform .18s ease,box-shadow .18s ease;}
+  .feature:hover{transform:translateY(-3px);box-shadow:0 20px 46px rgba(40,50,60,0.22);}
+  .feature-media{position:relative;min-height:308px;background:var(--navy-deep);}
+  .feature-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .feature-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(55,83,107,0) 38%,rgba(55,83,107,0.96) 100%);}
+  .feature-body{padding:44px 48px;display:flex;flex-direction:column;justify-content:center;}
+  .feature-cat{font-size:11px;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+  .feature-body h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:38px;line-height:1.06;color:#fff;margin:0 0 14px;}
+  .feature-body p{font-size:16px;line-height:1.6;color:#C7D1DA;margin:0 0 24px;max-width:560px;}
+  .feature-foot{display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid rgba(255,255,255,0.16);padding-top:18px;}
+  .feature-foot .meta{font-size:12.5px;color:#9FB0BA;letter-spacing:0.04em;}
+  .feature-foot .meta b{font-family:'Cormorant Garamond',serif;font-size:17px;color:#fff;font-weight:600;}
+  .feature-foot .open{font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);}
+  .feature:hover .feature-foot .open{color:#fff;}
+
   /* ---------- how-to strip ---------- */
   .howto{max-width:1180px;margin:18px auto 0;padding:0 56px;}
   .howto-inner{background:var(--navy);border-radius:16px;color:#dbe3e8;padding:30px 36px;display:flex;gap:40px;align-items:center;flex-wrap:wrap;}
@@ -79,6 +96,9 @@
 
   @media (max-width:820px){
     .grid{grid-template-columns:1fr;}
+    .feature{grid-template-columns:1fr;}
+    .feature-media{min-height:180px;}
+    .feature-media::after{background:linear-gradient(0deg,rgba(55,83,107,0.55),rgba(55,83,107,0));}
     .hero-inner,.wrap,.howto,footer{padding-left:28px;padding-right:28px;}
     .hero h1{font-size:40px;}
   }
@@ -103,6 +123,17 @@
 
   <main class="wrap">
     <div class="section-head"><span class="rule"></span><span class="eyebrow">The Collection</span></div>
+
+    <a class="feature" href="platform-ecosystem.html">
+      <div class="feature-media"><img src="assets/photos/golden-courtyard.jpg" alt=""></div>
+      <div class="feature-body">
+        <div class="feature-cat">Start Here &middot; The Platform</div>
+        <h2>How it all connects</h2>
+        <p>Virtue Impact Fund (capital), Aevum Developments (developer), and Heal House (wellness operations) as one aligned platform &mdash; capital &rarr; build &rarr; operate &rarr; return. The overview that frames everything below.</p>
+        <div class="feature-foot"><span class="meta"><b>11</b> slides &middot; presentation</span><span class="open">Open the platform deck &rarr;</span></div>
+      </div>
+    </a>
+
     <div class="grid">
 
       <a class="card" href="brand-guidelines.html">

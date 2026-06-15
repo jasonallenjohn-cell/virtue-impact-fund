@@ -49,8 +49,9 @@ html, body { margin: 0; height: 100%; background: var(--deck-letterbox); }
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.32s ease;
 }
+/* Instant cut between slides — no crossfade, so nothing dips through the
+   dark letterbox during a transition (and print/screenshots stay clean). */
 .slide.active { visibility: visible; opacity: 1; }
 
 /* The slide's own <section> fills the slide box (it carries width/height:100%
