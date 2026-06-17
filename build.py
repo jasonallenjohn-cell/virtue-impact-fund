@@ -43,6 +43,7 @@ PAGE = """<!DOCTYPE html>
 <title>{title}</title>
 <!-- ===== fonts + brand helper classes (from the design source helmet) ===== -->
 {helmet}
+<link rel="icon" type="image/png" href="assets/healhouse/HealHouse_AppIcon_1024.png">
 <link rel="stylesheet" href="deck.css">
 </head>
 <body>
