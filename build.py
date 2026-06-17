@@ -31,7 +31,7 @@ DECKS = [
     ("Virtue Impact Fund - Listowel + Lakeshore.dc.html",
      "listowel-lakeshore.html", "Virtue Impact Fund — Listowel + Lakeshore"),
     ("Virtue Impact Fund - 8440 Highway 27.dc.html",
-     "8440-highway-27.html", "Virtue Impact Fund × Heal House — 8440 Highway 27"),
+     "8440-highway-27.html", "Virtue Impact Fund × Heal — 8440 Highway 27"),
 ]
 
 PAGE = """<!DOCTYPE html>
