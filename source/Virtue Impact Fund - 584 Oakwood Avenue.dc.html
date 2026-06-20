@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;}
+    html,body{margin:0;height:100%;background:#2c2c2c;}
+    .vif-eyebrow{font-family:'Jost',sans-serif;font-weight:500;font-size:15px;letter-spacing:0.32em;text-transform:uppercase;}
+    .vif-foot{font-family:'Jost',sans-serif;font-weight:400;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#a6afb4;}
+    .vif-num{font-family:'Cormorant Garamond',serif;font-variant-numeric:tabular-nums;line-height:1;}
+  </style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%" style="position:fixed;inset:0;width:100vw;height:100vh;">
+
+  <!-- ============ 01 COVER ============ -->
+  <section data-label="Cover" data-screen-label="Cover" data-speaker-notes="584 Oakwood Avenue, Toronto — a 51-home, 8-storey seniors retirement residence with a ground-floor Heal House, taken through the Build Canada Homes / CMHC MLI Select Common Ground structure with 15 homes permanently affordable. The Virtue Impact Fund contributes the land ($5M) and becomes the landowner, recovering most of its basis at close while keeping a 5% stake, 60% of cash flow and a Year-20 buyout." style="width:100%;height:100%;position:relative;background:#37536B;display:flex;overflow:hidden;font-family:'Jost',sans-serif;color:#EAF0F2;">
+    <div style="flex:0 0 60%;padding:78px 64px 66px 110px;display:flex;flex-direction:column;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:26px;">
+        <img src="assets/logo-vector-cream.svg" alt="Virtue Impact Fund" style="height:62px;width:auto;">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:30px;color:#8FA089;font-style:italic;">&times;</span>
+        <img src="assets/healhouse/healhouse-logo-cream.png" alt="Heal" style="height:30px;width:auto;">
+      </div>
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#B89B5A;font-size:13px;">Build Canada Homes &middot; Toronto &middot; 584 Oakwood Avenue</span></div>
+        <h1 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:58px;line-height:1.06;color:#fff;margin:0;letter-spacing:-0.005em;max-width:840px;">A Toronto retirement residence,<br><span style="color:#B7C7AF;font-style:italic;">unlocked by Build Canada Homes.</span></h1>
+        <p style="font-size:18px;line-height:1.6;color:#C7D1DA;margin:24px 0 0;max-width:680px;text-wrap:pretty;">The fund contributes the land and becomes the landowner. A 40% Build Canada Homes grant makes a seniors retirement home &mdash; with a ground-floor Heal House &mdash; finance cleanly, with 15 homes permanently affordable. The fund recovers most of its basis at close and keeps the asset, the income and a Year-20 buyout.</p>
+      </div>
+      <div style="display:flex;gap:34px;border-top:1px solid rgba(255,255,255,0.16);padding-top:24px;">
+        <div><div class="vif-num" style="font-size:36px;color:#fff;">51 homes</div><div style="font-size:12.5px;color:#9FB0BA;margin-top:7px;line-height:1.4;max-width:150px;">8 storeys &middot; 15 affordable</div></div>
+        <div><div class="vif-num" style="font-size:36px;color:#fff;">$5M</div><div style="font-size:12.5px;color:#9FB0BA;margin-top:7px;line-height:1.4;max-width:150px;">Land &middot; the fund's contribution</div></div>
+        <div><div class="vif-num" style="font-size:36px;color:#fff;">40%</div><div style="font-size:12.5px;color:#9FB0BA;margin-top:7px;line-height:1.4;max-width:150px;">Build Canada Homes grant</div></div>
+        <div><div class="vif-num" style="font-size:36px;color:#fff;">1.37&times;</div><div style="font-size:12.5px;color:#9FB0BA;margin-top:7px;line-height:1.4;max-width:150px;">DSCR &middot; grant-supported</div></div>
+      </div>
+    </div>
+    <div style="flex:1;position:relative;background:#2c3e4c;overflow:hidden;">
+      <img src="assets/photos/healing-garden.jpg" alt="Heal House wellness" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;">
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(55,83,107,0.86) 0%,rgba(55,83,107,0) 34%);"></div>
+    </div>
+  </section>
+
+  <!-- ============ 02 THESIS ============ -->
+  <section data-label="The Thesis" data-screen-label="The Thesis" data-speaker-notes="The same land-unlock thesis as 8440 and Keele: the fund becomes the landowner, contributes land instead of cash, and the federal Build Canada Homes grant plus CMHC do the heavy lifting. Federal capital makes affordable housing financeable; the fund captures the land value, the income split and the Year-20 buyout." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">The Thesis</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:50px;line-height:1.06;color:#37536B;margin:22px 0 14px;max-width:1180px;">Federal capital builds it. <span style="font-style:italic;color:#8FA089;">The fund owns the land.</span></h2>
+    <p style="font-size:18px;line-height:1.6;color:#52606a;margin:0 0 44px;max-width:1020px;text-wrap:pretty;">Entitled Toronto land, a 40% Build Canada Homes grant and a CMHC MLI Select mortgage combine so a seniors retirement home finances on its own income &mdash; with the fund contributing land, not cash. The same repeatable land-unlock behind 8440 and Keele Street.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;border-top:3px solid #8FA089;padding:30px 28px;"><div class="vif-eyebrow" style="font-size:11px;color:#8C6A30;margin-bottom:14px;">Step 01</div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:26px;color:#37536B;margin:0 0 10px;">Contribute land, not cash</h3><p style="font-size:15px;line-height:1.5;color:#52606a;margin:0;">The fund puts in the $5M Oakwood land. No construction equity, no build risk &mdash; the land is the position.</p></div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;border-top:3px solid #8C6A30;padding:30px 28px;"><div class="vif-eyebrow" style="font-size:11px;color:#8C6A30;margin-bottom:14px;">Step 02</div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:26px;color:#37536B;margin:0 0 10px;">Federal capital fills the gap</h3><p style="font-size:15px;line-height:1.5;color:#52606a;margin:0;">A <strong style="color:#8C6A30;">40% Build Canada Homes grant</strong> (no repayment) plus a CMHC MLI Select mortgage fund the build at a financeable 1.37&times; DSCR.</p></div>
+      <div style="background:#37536B;border-radius:12px;padding:30px 28px;color:#fff;"><div class="vif-eyebrow" style="font-size:11px;color:#B89B5A;margin-bottom:14px;">Step 03</div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:26px;color:#fff;margin:0 0 10px;">Recover, hold, compound</h3><p style="font-size:15px;line-height:1.5;color:#C7D1DA;margin:0;">The fund takes ~$3.5M out at close, keeps a 5% stake, 60% of cash flow and a Year-20 buyout.</p></div>
+    </div>
+    <div style="position:absolute;left:120px;right:120px;bottom:40px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &times; Heal &middot; 584 Oakwood Avenue</span><span class="vif-foot">2 / 12</span></div>
+  </section>
+
+  <!-- ============ 03 THE SITE ============ -->
+  <section data-label="The Site" data-screen-label="The Site" data-speaker-notes="584 Oakwood Avenue, in Toronto's Little Jamaica Cultural District on Oakwood Avenue (a Major Street), near the Eglinton Crosstown LRT (Oakwood station). The Pre-Application Consultation (Apr 2025) states added height and GFA can be considered via an Official Plan Amendment, and the City wants at-grade community/commercial space — which the Heal House provides." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">The Site</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:48px;line-height:1.04;color:#37536B;margin:20px 0 12px;">584 Oakwood Avenue.</h2>
+    <p style="font-size:17px;line-height:1.6;color:#52606a;margin:0 0 36px;max-width:1040px;text-wrap:pretty;">In Toronto's <strong style="color:#37536B;">Little Jamaica Cultural District</strong> on Oakwood Avenue &mdash; a Major Street &mdash; steps from the Eglinton Crosstown LRT (Oakwood station). The City is supportive of additional height and wants at-grade community space, which the ground-floor Heal House provides.</p>
+    <div class="dl" style="margin-top:8px;">
+      <div style="display:flex;justify-content:space-between;gap:24px;padding:15px 0;border-bottom:1px solid #E2DCCF;"><span class="vif-eyebrow" style="font-size:11px;color:#8FA089;">Location</span><span style="text-align:right;max-width:62%;color:#243039;">Toronto, ON &middot; Oakwood Ave &middot; on the Eglinton Crosstown LRT (Oakwood station)</span></div>
+      <div style="display:flex;justify-content:space-between;gap:24px;padding:15px 0;border-bottom:1px solid #E2DCCF;"><span class="vif-eyebrow" style="font-size:11px;color:#8FA089;">Program</span><span style="text-align:right;max-width:62%;color:#243039;">51 retirement homes &middot; 8 storeys &middot; ~43k sf &middot; ground-floor Heal House</span></div>
+      <div style="display:flex;justify-content:space-between;gap:24px;padding:15px 0;border-bottom:1px solid #E2DCCF;"><span class="vif-eyebrow" style="font-size:11px;color:#8FA089;">Affordability</span><span style="text-align:right;max-width:62%;color:#243039;">15 homes at 0.80&times; CMHC median market rent</span></div>
+      <div style="display:flex;justify-content:space-between;gap:24px;padding:15px 0;border-bottom:1px solid #E2DCCF;"><span class="vif-eyebrow" style="font-size:11px;color:#8FA089;">Status</span><span style="text-align:right;max-width:62%;color:#243039;">8 storeys / 26.5 m (revised 2026) &middot; OPA to be filed</span></div>
+      <div style="display:flex;justify-content:space-between;gap:24px;padding:15px 0;border-bottom:1px solid #E2DCCF;"><span class="vif-eyebrow" style="font-size:11px;color:#8FA089;">Structure</span><span style="text-align:right;max-width:62%;color:#243039;">Common Ground land lease &middot; Build Canada Homes + CMHC MLI Select</span></div>
+    </div>
+    <div style="position:absolute;left:120px;right:120px;bottom:40px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &times; Heal &middot; 584 Oakwood Avenue</span><span class="vif-foot">3 / 12</span></div>
+  </section>
+
+  <!-- ============ 04 THE PROGRAM ============ -->
+  <section data-label="The Program" data-screen-label="The Program" data-speaker-notes="51 retirement homes, 15 held permanently affordable, plus a ground-floor Heal House — the service layer that makes it a retirement home, not just an apartment: wellness, meals and health services for residents and the wider community, $744k gross / $285k operator net per year. The Heal House is also the at-grade community use the City asked for." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">The Program</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:48px;line-height:1.04;color:#37536B;margin:20px 0 12px;">A retirement home &mdash; <span style="font-style:italic;color:#8FA089;">not just an apartment.</span></h2>
+    <p style="font-size:17px;line-height:1.6;color:#52606a;margin:0 0 32px;max-width:1040px;text-wrap:pretty;">51 independent-living homes with a ground-floor Heal House &mdash; wellness, meals and health services for residents and the wider community. 15 homes are held permanently affordable at 0.80&times; market, which unlocks CMHC MLI Select and the 40% Build Canada Homes grant.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;">
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;padding:24px 22px;"><div class="vif-num" style="font-size:40px;color:#37536B;">51</div><div style="font-size:13px;color:#6a767f;margin-top:8px;line-height:1.4;">retirement homes &middot; 8 storeys</div></div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;padding:24px 22px;"><div class="vif-num" style="font-size:40px;color:#37536B;">15</div><div style="font-size:13px;color:#6a767f;margin-top:8px;line-height:1.4;">held affordable &middot; 0.80&times; market</div></div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;padding:24px 22px;"><div class="vif-num" style="font-size:40px;color:#8C6A30;">$744k</div><div style="font-size:13px;color:#6a767f;margin-top:8px;line-height:1.4;">Heal House gross / yr</div></div>
+      <div style="background:#37536B;border-radius:12px;padding:24px 22px;color:#fff;"><div class="vif-num" style="font-size:40px;color:#fff;">$285k</div><div style="font-size:13px;color:#B7C7AF;margin-top:8px;line-height:1.4;">Heal House operator net / yr</div></div>
+    </div>
+    <div style="display:flex;gap:16px;">
+      <div style="flex:1;display:flex;align-items:center;gap:16px;background:#EEEAE0;border-radius:12px;padding:18px 28px;"><span class="vif-num" style="font-size:30px;color:#8C6A30;">$318k</span><span style="flex:1;font-size:15px;line-height:1.5;color:#52606a;">resident wellness income / yr</span></div>
+      <div style="flex:1;display:flex;align-items:center;gap:16px;background:#EEEAE0;border-radius:12px;padding:18px 28px;"><span class="vif-num" style="font-size:30px;color:#8C6A30;">$426k</span><span style="flex:1;font-size:15px;line-height:1.5;color:#52606a;">outside-community income / yr</span></div>
+    </div>
+    <div style="position:absolute;left:120px;right:120px;bottom:40px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &times; Heal &middot; 584 Oakwood Avenue</span><span class="vif-foot">4 / 12</span></div>
+  </section>
+
+  <!-- ============ 05 THE BCH STRUCTURE ============ -->
+  <section data-label="The Structure" data-screen-label="The Structure" data-speaker-notes="How the affordable version finances: a 40% Build Canada Homes forgivable grant (no repayment, no debt service), a CMHC MLI Select mortgage at ~50% loan-to-cost, and the fund's land as the equity. As a conventional market rental the deal is thin (3.2% yield-on-cost near the cap rate); the grant is what turns it into a 1.37x-covered, financeable deal." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">The Structure &middot; Build Canada Homes + CMHC</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:46px;line-height:1.06;color:#37536B;margin:20px 0 12px;">The grant is what makes it finance.</h2>
+    <p style="font-size:16px;line-height:1.6;color:#52606a;margin:0 0 30px;max-width:1080px;text-wrap:pretty;">As a conventional rental the deal is thin &mdash; a 3.2% yield-on-cost sits near the cap rate. The <strong style="color:#8C6A30;">40% Build Canada Homes grant</strong> &mdash; forgivable, no debt service &mdash; collapses the debt the income has to carry, taking coverage to a financeable <strong style="color:#37536B;">1.37&times;</strong>.</p>
+    <div class="vif-eyebrow" style="font-size:11px;color:#8FA089;margin-bottom:12px;">Sources &middot; $30.4M total cost</div>
+    <div style="display:flex;gap:18px;margin-bottom:30px;">
+      <div style="flex:1;background:#fff;border:1px solid #E7E2D8;border-radius:12px;border-top:3px solid #8C6A30;padding:26px 24px;"><div class="vif-num" style="font-size:38px;color:#8C6A30;line-height:1;">$12.1M</div><div style="font-size:13.5px;color:#52606a;margin-top:10px;">Build Canada Homes grant <span style="color:#8a949c;">&middot; 40% &middot; forgivable</span></div></div>
+      <div style="flex:1;background:#fff;border:1px solid #E7E2D8;border-radius:12px;border-top:3px solid #37536B;padding:26px 24px;"><div class="vif-num" style="font-size:38px;color:#37536B;line-height:1;">$15.2M</div><div style="font-size:13.5px;color:#52606a;margin-top:10px;">CMHC MLI Select loan <span style="color:#8a949c;">&middot; 50% LTC &middot; covered 1.37&times;</span></div></div>
+      <div style="flex:1;background:#fff;border:1px solid #E7E2D8;border-radius:12px;border-top:3px solid #8FA089;padding:26px 24px;"><div class="vif-num" style="font-size:38px;color:#8FA089;line-height:1;">$5.0M</div><div style="font-size:13.5px;color:#52606a;margin-top:10px;">Fund land contribution <span style="color:#8a949c;">&middot; the equity</span></div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;background:#37536B;border-radius:12px;padding:18px 30px;color:#fff;"><span class="vif-eyebrow" style="font-size:12px;color:#B89B5A;">Why it works</span><span style="flex:1;font-size:15.5px;line-height:1.5;color:#dbe3e8;">Affordable seniors housing doesn't pencil at market caps &mdash; the 40% federal grant is the difference between thin and <strong style="color:#fff;">bankable</strong>, and it is non-repayable. Common Ground needs no forced sale and no condo recovery.</span></div>
+    <div style="position:absolute;left:120px;right:120px;bottom:40px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &times; Heal &middot; 584 Oakwood Avenue</span><span class="vif-foot">5 / 12</span></div>
+  </section>
+
+  <!-- ============ 06 THE NUMBERS ============ -->
+  <section data-label="The Numbers" data-screen-label="The Numbers" data-speaker-notes="The headline figures. $30.4M total cost, $12.1M grant, $15.2M loan, $1.0M stabilised NOI, 1.37x DSCR, 15 of 51 homes affordable. All illustrative, from the deal-review proforma; land value, costs, rents and financing to be confirmed by appraisal and QS." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">The Numbers</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:48px;line-height:1.04;color:#37536B;margin:20px 0 10px;">A deal that pencils &mdash; <span style="font-style:italic;color:#8FA089;">on the grant.</span></h2>
+    <p style="font-size:15px;line-height:1.6;color:#8a949c;margin:0 0 34px;max-width:1000px;">Illustrative &mdash; based on the deal-review proforma; land value, costs, rents and financing are modelling assumptions to be confirmed by appraisal and QS.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#E2DCCF;border:1px solid #E2DCCF;">
+      <div style="background:#fff;padding:28px 24px;"><div class="vif-num" style="font-size:42px;color:#8C6A30;">$30.4M</div><div class="vif-foot" style="color:#6a767f;margin-top:12px;">Total development cost</div></div>
+      <div style="background:#fff;padding:28px 24px;"><div class="vif-num" style="font-size:42px;color:#8C6A30;">$12.1M</div><div class="vif-foot" style="color:#6a767f;margin-top:12px;">Build Canada Homes grant</div></div>
+      <div style="background:#fff;padding:28px 24px;"><div class="vif-num" style="font-size:42px;color:#37536B;">$15.2M</div><div class="vif-foot" style="color:#6a767f;margin-top:12px;">CMHC MLI Select loan</div></div>
+      <div style="background:#fff;padding:28px 24px;"><div class="vif-num" style="font-size:42px;color:#37536B;">$1.0M</div><div class="vif-foot" style="color:#6a767f;margin-top:12px;">Stabilised NOI &middot; Yr 1</div></div>
+      <div style="background:#fff;padding:28px 24px;"><div class="vif-num" style="font-size:42px;color:#37536B;">1.37&times;</div><div class="vif-foot" style="color:#6a767f;margin-top:12px;">DSCR &middot; grant-supported</div></div>
+      <div style="background:#fff;padding:28px 24px;"><div class="vif-num" style="font-size:42px;color:#37536B;">29%</div><div class="vif-foot" style="color:#6a767f;margin-top:12px;">Homes held affordable (15)</div></div>
+      <div style="background:#fff;padding:28px 24px;"><div class="vif-num" style="font-size:42px;color:#37536B;">$596k</div><div class="vif-foot" style="color:#6a767f;margin-top:12px;">All-in cost / home</div></div>
+      <div style="background:#37536B;padding:28px 24px;"><div class="vif-num" style="font-size:42px;color:#fff;">3.8&times;</div><div class="vif-foot" style="color:#B7C7AF;margin-top:12px;">Fund return on 5% equity</div></div>
+    </div>
+    <div style="position:absolute;left:120px;right:120px;bottom:40px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &times; Heal &middot; 584 Oakwood Avenue</span><span class="vif-foot">6 / 12</span></div>
+  </section>
+
+  <!-- ============ 07 FUND AS LANDOWNER ============ -->
+  <section data-label="The Land-Unlock" data-screen-label="The Land-Unlock" data-speaker-notes="The fund's position. It contributes the $5M land. Because the grant and loan fund the build, the land value is largely released back to the fund: ~$3.5M cash out at close (70% of basis), keeping a 5% stake, 60% of net cash flow, and a Year-20 buyout of equity plus mortgage paydown (~$2.7M). The fund is nearly whole on day one and keeps the upside." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">The Land-Unlock &middot; The Fund's Position</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:46px;line-height:1.06;color:#37536B;margin:20px 0 12px;">$5M of land in. <span style="font-style:italic;color:#8FA089;">$3.5M back at close.</span></h2>
+    <p style="font-size:16px;line-height:1.6;color:#52606a;margin:0 0 30px;max-width:1080px;text-wrap:pretty;">Because the grant and mortgage fund the build, the fund's land value is largely released as cash at close &mdash; while the fund keeps a 5% stake, 60% of cash flow and a Year-20 buyout. A land contribution turned into recovered capital <strong style="color:#37536B;">plus</strong> a long-dated owned asset.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;">
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;padding:24px 20px;"><div class="vif-num" style="font-size:34px;color:#8C6A30;">$3.5M</div><div style="font-size:13px;color:#6a767f;margin-top:8px;line-height:1.4;">cash out at close &middot; 70% of basis</div></div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;padding:24px 20px;"><div class="vif-num" style="font-size:34px;color:#37536B;">5%</div><div style="font-size:13px;color:#6a767f;margin-top:8px;line-height:1.4;">retained equity stake</div></div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;padding:24px 20px;"><div class="vif-num" style="font-size:34px;color:#37536B;">60%</div><div style="font-size:13px;color:#6a767f;margin-top:8px;line-height:1.4;">of net cash flow / yr</div></div>
+      <div style="background:#37536B;border-radius:12px;padding:24px 20px;color:#fff;"><div class="vif-num" style="font-size:34px;color:#fff;">~$2.7M</div><div style="font-size:13px;color:#B7C7AF;margin-top:8px;line-height:1.4;">Year-20 buyout &middot; equity + paydown</div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;background:#37536B;border-radius:12px;padding:18px 30px;color:#fff;"><span class="vif-eyebrow" style="font-size:12px;color:#B89B5A;">The point</span><span style="flex:1;font-size:15.5px;line-height:1.5;color:#dbe3e8;">The fund is nearly whole on day one &mdash; <strong style="color:#fff;">~$3.5M of its $5M basis back at close</strong> &mdash; and still owns a Toronto retirement asset, 60% of its income, and a Year-20 buyout. Capital preservation first; upside kept.</span></div>
+    <div style="position:absolute;left:120px;right:120px;bottom:40px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &times; Heal &middot; 584 Oakwood Avenue</span><span class="vif-foot">7 / 12</span></div>
+  </section>
+
+  <!-- ============ 08 RETURNS OVER TIME ============ -->
+  <section data-label="Returns Over Time" data-screen-label="Returns Over Time" data-speaker-notes="The 20-year picture. NOI grows from $1.0M to ~$1.28M by Year 10; coverage rises as the fixed mortgage is outgrown. The fund's net basis after the cash-out is ~$1.5M (its 5% stake), against which it earns 60% of cash flow plus the Year-20 buyout — an illustrative 3.8x on the 5% equity over 20 years, ~10.2% IRR, with most of the basis already returned at close." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">Returns &middot; 20-Year Hold</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:46px;line-height:1.06;color:#37536B;margin:20px 0 10px;">Capital back early. Income that compounds.</h2>
+    <p style="font-size:16px;line-height:1.6;color:#8a949c;margin:0 0 34px;max-width:1000px;">Illustrative, refinance-and-hold. Income grows against a fixed mortgage; the fund's small net basis after the cash-out drives a strong multiple over the hold.</p>
+    <table style="width:100%;border-collapse:collapse;">
+      <thead><tr>
+        <th style="text-align:left;padding:12px 14px;border-bottom:1.5px solid #37536B;font-family:'Jost';font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#6a767f;">Measure</th>
+        <th style="text-align:right;padding:12px 14px;border-bottom:1.5px solid #37536B;font-family:'Jost';font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#6a767f;">Year 1</th>
+        <th style="text-align:right;padding:12px 14px;border-bottom:1.5px solid #37536B;font-family:'Jost';font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#6a767f;">Year 5</th>
+        <th style="text-align:right;padding:12px 14px;border-bottom:1.5px solid #37536B;font-family:'Jost';font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#6a767f;">Year 10</th>
+      </tr></thead>
+      <tbody style="font-size:16px;color:#243039;">
+        <tr><td style="padding:13px 14px;border-bottom:1px solid #E2DCCF;font-weight:500;">Stabilised NOI</td><td style="padding:13px 14px;border-bottom:1px solid #E2DCCF;text-align:right;font-variant-numeric:tabular-nums;">$1.00M</td><td style="padding:13px 14px;border-bottom:1px solid #E2DCCF;text-align:right;font-variant-numeric:tabular-nums;">$1.13M</td><td style="padding:13px 14px;border-bottom:1px solid #E2DCCF;text-align:right;font-variant-numeric:tabular-nums;">$1.28M</td></tr>
+        <tr><td style="padding:13px 14px;border-bottom:1px solid #E2DCCF;font-weight:500;">DSCR</td><td style="padding:13px 14px;border-bottom:1px solid #E2DCCF;text-align:right;font-variant-numeric:tabular-nums;">1.37&times;</td><td style="padding:13px 14px;border-bottom:1px solid #E2DCCF;text-align:right;font-variant-numeric:tabular-nums;">1.55&times;</td><td style="padding:13px 14px;border-bottom:1px solid #E2DCCF;text-align:right;font-variant-numeric:tabular-nums;">1.75&times;</td></tr>
+        <tr><td style="padding:13px 14px;border-bottom:1px solid #E2DCCF;font-weight:500;">Net cash flow &middot; 60% to fund</td><td style="padding:13px 14px;border-bottom:1px solid #E2DCCF;text-align:right;font-variant-numeric:tabular-nums;">$0.16M</td><td style="padding:13px 14px;border-bottom:1px solid #E2DCCF;text-align:right;font-variant-numeric:tabular-nums;">$0.24M</td><td style="padding:13px 14px;border-bottom:1px solid #E2DCCF;text-align:right;font-variant-numeric:tabular-nums;">$0.33M</td></tr>
+        <tr><td style="padding:13px 14px;border-bottom:1px solid #E2DCCF;font-weight:500;">Fund draw &middot; cumulative</td><td style="padding:13px 14px;border-bottom:1px solid #E2DCCF;text-align:right;font-variant-numeric:tabular-nums;">$0.16M</td><td style="padding:13px 14px;border-bottom:1px solid #E2DCCF;text-align:right;font-variant-numeric:tabular-nums;">$1.0M</td><td style="padding:13px 14px;border-bottom:1px solid #E2DCCF;text-align:right;font-variant-numeric:tabular-nums;">$2.5M</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:26px;display:flex;gap:18px;">
+      <div style="flex:1;display:flex;align-items:baseline;gap:14px;background:#EEEAE0;border-radius:12px;padding:20px 28px;"><span class="vif-num" style="font-size:38px;color:#8C6A30;">3.8&times;</span><span style="font-size:15px;line-height:1.45;color:#52606a;">on the 5% equity &middot; 20-yr, illustrative</span></div>
+      <div style="flex:1;display:flex;align-items:baseline;gap:14px;background:#EEEAE0;border-radius:12px;padding:20px 28px;"><span class="vif-num" style="font-size:38px;color:#8C6A30;">10.2%</span><span style="font-size:15px;line-height:1.45;color:#52606a;">IRR &middot; with 70% of basis back at close</span></div>
+    </div>
+    <div style="position:absolute;left:120px;right:120px;bottom:40px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &times; Heal &middot; 584 Oakwood Avenue</span><span class="vif-foot">8 / 12</span></div>
+  </section>
+
+  <!-- ============ 09 WHY OAKWOOD ============ -->
+  <section data-label="Why Oakwood" data-screen-label="Why Oakwood" data-speaker-notes="Oakwood Avenue is a Major Street in Toronto's Little Jamaica Cultural District, directly on the new Eglinton Crosstown LRT. The City is supportive of height and wants at-grade community use, which the Heal House provides. Seniors demand is deep and non-cyclical; the affordable component answers a real local need and the politics of approval." style="width:100%;height:100%;position:relative;background:#37536B;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;color:#EAF0F2;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#B89B5A;">Why Oakwood</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:48px;line-height:1.05;color:#fff;margin:20px 0 14px;max-width:1180px;">On the LRT, in a cultural district &mdash; <span style="font-style:italic;color:#B7C7AF;">and short on seniors housing.</span></h2>
+    <p style="font-size:18px;line-height:1.6;color:#C7D1DA;margin:0 0 44px;max-width:1020px;text-wrap:pretty;">Oakwood Avenue is a Major Street in Toronto's Little Jamaica Cultural District, directly on the new Eglinton Crosstown LRT. Seniors demand is deep and non-cyclical &mdash; while the affordable component and the at-grade Heal House answer a real local need and the politics of approval.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <div style="border-top:2px solid #8FA089;padding-top:22px;"><div class="vif-num" style="font-size:30px;color:#fff;margin-bottom:8px;">On the LRT</div><p style="font-size:15px;line-height:1.5;color:#C7D1DA;margin:0;">Steps from the Eglinton Crosstown (Oakwood station) &mdash; transit-rich, walkable, central.</p></div>
+      <div style="border-top:2px solid #B89B5A;padding-top:22px;"><div class="vif-num" style="font-size:30px;color:#fff;margin-bottom:8px;">Deep demand</div><p style="font-size:15px;line-height:1.5;color:#C7D1DA;margin:0;">An ageing city and almost no new affordable seniors housing &mdash; non-cyclical, resilient demand.</p></div>
+      <div style="border-top:2px solid #C7D1DA;padding-top:22px;"><div class="vif-num" style="font-size:30px;color:#fff;margin-bottom:8px;">Approvable</div><p style="font-size:15px;line-height:1.5;color:#C7D1DA;margin:0;">The City wants height and at-grade community use &mdash; the Heal House delivers exactly that.</p></div>
+    </div>
+    <div style="position:absolute;left:120px;right:120px;bottom:40px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot" style="color:rgba(246,241,232,0.7);">Virtue Impact Fund &times; Heal &middot; 584 Oakwood Avenue</span><span class="vif-foot" style="color:rgba(246,241,232,0.7);">9 / 12</span></div>
+  </section>
+
+  <!-- ============ 10 PIPELINE FIT ============ -->
+  <section data-label="Pipeline Fit" data-screen-label="Pipeline Fit" data-speaker-notes="How Oakwood fits the fund: it is the same repeatable Build Canada Homes land-unlock as 8440 (Heal Living seniors residence) and Keele Street (King City rental) — the fund becomes the landowner, federal capital finances the build, the fund recovers basis and holds. One thesis, a growing pipeline." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">Pipeline Fit</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:48px;line-height:1.04;color:#37536B;margin:20px 0 12px;">One thesis. <span style="font-style:italic;color:#8FA089;">A repeatable pipeline.</span></h2>
+    <p style="font-size:17px;line-height:1.6;color:#52606a;margin:0 0 36px;max-width:1040px;text-wrap:pretty;">Oakwood is the same land-unlock the fund runs everywhere: become the landowner, let Build Canada Homes and CMHC finance the build, recover capital early and hold a cash-flowing asset. Different sites, one repeatable mechanic.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;border-top:3px solid #B89B5A;padding:26px 24px;"><div class="vif-eyebrow" style="font-size:11px;color:#8C6A30;margin-bottom:10px;">8440 Highway 27</div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;color:#37536B;margin:0 0 8px;">Heal Living seniors residence</h3><p style="font-size:14px;line-height:1.5;color:#52606a;margin:0;">BCH land-unlock on the surplus land of the Vaughan wellness campus.</p></div>
+      <div style="background:#37536B;border-radius:12px;padding:26px 24px;color:#fff;"><div class="vif-eyebrow" style="font-size:11px;color:#B89B5A;margin-bottom:10px;">584 Oakwood &middot; this deal</div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;color:#fff;margin:0 0 8px;">Toronto retirement home</h3><p style="font-size:14px;line-height:1.5;color:#C7D1DA;margin:0;">51 homes, ground-floor Heal House, on the Eglinton Crosstown.</p></div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;border-top:3px solid #8FA089;padding:26px 24px;"><div class="vif-eyebrow" style="font-size:11px;color:#8C6A30;margin-bottom:10px;">Keele Street</div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;color:#37536B;margin:0 0 8px;">King City rental community</h3><p style="font-size:14px;line-height:1.5;color:#52606a;margin:0;">105 homes, 30% affordable, fund as landowner.</p></div>
+    </div>
+    <div style="position:absolute;left:120px;right:120px;bottom:40px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &times; Heal &middot; 584 Oakwood Avenue</span><span class="vif-foot">10 / 12</span></div>
+  </section>
+
+  <!-- ============ 11 DILIGENCE ============ -->
+  <section data-label="Diligence" data-screen-label="Diligence" data-speaker-notes="Honest diligence items: BCH/CMHC eligibility and grant confirmation, the affordable definition and rents, QS hard cost, the OPA / height approval, appraisal of the $5M land basis (honest comps put it $2.6M-$5.1M against the $5M ask), and the Heal House operator buildout (a $1.6M launch reserve). Nothing here is approved yet — these are the gates." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">What We're Confirming</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:46px;line-height:1.05;color:#37536B;margin:20px 0 12px;">Honest about the gates.</h2>
+    <p style="font-size:16px;line-height:1.6;color:#52606a;margin:0 0 34px;max-width:1040px;text-wrap:pretty;">The structure is illustrative until these clear &mdash; we underwrite the gates, not around them.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;padding:20px 24px;font-size:15px;line-height:1.45;color:#243039;"><strong style="color:#37536B;">BCH + CMHC eligibility</strong> &mdash; confirm the 40% grant and MLI Select sizing, and the affordable definition / rents.</div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;padding:20px 24px;font-size:15px;line-height:1.45;color:#243039;"><strong style="color:#37536B;">OPA &amp; height</strong> &mdash; the 8-storey design needs the Official Plan Amendment the City has invited.</div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;padding:20px 24px;font-size:15px;line-height:1.45;color:#243039;"><strong style="color:#37536B;">Land appraisal</strong> &mdash; honest comps put the basis at ~$2.6M&ndash;$5.1M against the $5M ask; confirm by appraisal.</div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;padding:20px 24px;font-size:15px;line-height:1.45;color:#243039;"><strong style="color:#37536B;">Heal House operator</strong> &mdash; a separate ~$1.6M buildout / launch reserve; confirm the rent / care split with CMHC.</div>
+    </div>
+    <div style="position:absolute;left:120px;right:120px;bottom:40px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &times; Heal &middot; 584 Oakwood Avenue</span><span class="vif-foot">11 / 12</span></div>
+  </section>
+
+  <!-- ============ 12 CLOSING ============ -->
+  <section data-label="The Ask" data-screen-label="The Ask" data-speaker-notes="Closing. Oakwood is a clean, repeatable land-unlock: the fund contributes Toronto land, federal capital builds 51 retirement homes with 15 affordable and a ground-floor Heal House, the fund recovers ~70% of its basis at close and holds a cash-flowing asset with a Year-20 buyout. The next pipeline deal, ready to underwrite." style="width:100%;height:100%;position:relative;background:#2A3F50;display:flex;align-items:center;overflow:hidden;font-family:'Jost',sans-serif;color:#EAF0F2;">
+    <div style="padding:0 120px;max-width:1280px;">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:26px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#B89B5A;">584 Oakwood Avenue &middot; Toronto</span></div>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:66px;line-height:1.05;color:#fff;margin:0;letter-spacing:-0.01em;max-width:1180px;">Contribute land. Build 51 homes.<br><span style="font-style:italic;color:#B7C7AF;">Get the capital back.</span></h1>
+      <p style="font-size:19px;line-height:1.6;color:#C7D1DA;margin:30px 0 0;max-width:980px;text-wrap:pretty;">A 40% Build Canada Homes grant turns Toronto land into a financeable retirement residence with a ground-floor Heal House &mdash; the fund recovers ~70% of its $5M basis at close and keeps the asset, the income and a Year-20 buyout. The same land-unlock as 8440 and Keele Street, ready to underwrite.</p>
+      <div style="margin-top:40px;display:flex;gap:38px;border-top:1px solid rgba(255,255,255,0.16);padding-top:26px;">
+        <div><div class="vif-num" style="font-size:34px;color:#fff;">51 homes</div><div style="font-size:13px;color:#9FB0BA;margin-top:6px;">15 affordable + Heal House</div></div>
+        <div><div class="vif-num" style="font-size:34px;color:#fff;">$3.5M</div><div style="font-size:13px;color:#9FB0BA;margin-top:6px;">basis back at close</div></div>
+        <div><div class="vif-num" style="font-size:34px;color:#fff;">3.8&times;</div><div style="font-size:13px;color:#9FB0BA;margin-top:6px;">on 5% equity &middot; 20-yr, illustrative</div></div>
+        <div><div class="vif-num" style="font-size:34px;color:#fff;">invest@virtueimpactfund.ca</div><div style="font-size:13px;color:#9FB0BA;margin-top:6px;">Virtue Impact Fund &times; Heal</div></div>
+      </div>
+    </div>
+  </section>
+
+</x-import>
+</x-dc>
+</body>
+</html>
