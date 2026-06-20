@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;}
+    html,body{margin:0;height:100%;background:#2c2c2c;}
+    .vif-eyebrow{font-family:'Jost',sans-serif;font-weight:500;font-size:15px;letter-spacing:0.32em;text-transform:uppercase;}
+    .vif-foot{font-family:'Jost',sans-serif;font-weight:400;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#a6afb4;}
+    .vif-num{font-family:'Cormorant Garamond',serif;font-variant-numeric:tabular-nums;line-height:1;}
+  </style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%" style="position:fixed;inset:0;width:100vw;height:100vh;">
+
+  <!-- ============ 01 COVER ============ -->
+  <section data-label="Cover" data-screen-label="Cover" data-speaker-notes="Virtue Impact Fund — a roughly $50M impact fund deploying across seven Build Canada Homes projects in Ontario. The fund becomes the landowner: it contributes land, federal Build Canada Homes grants plus CMHC finance the build, and the fund recovers most of its basis at close while holding cash-flowing assets with Year-20 buyouts. Illustrative, pre-diligence." style="width:100%;height:100%;position:relative;background:#37536B;display:flex;overflow:hidden;font-family:'Jost',sans-serif;color:#EAF0F2;">
+    <div style="flex:0 0 60%;padding:78px 64px 66px 110px;display:flex;flex-direction:column;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:26px;">
+        <img src="assets/logo-vector-cream.svg" alt="Virtue Impact Fund" style="height:62px;width:auto;">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:30px;color:#8FA089;font-style:italic;">&times;</span>
+        <img src="assets/healhouse/healhouse-logo-cream.png" alt="Heal" style="height:30px;width:auto;">
+      </div>
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#B89B5A;font-size:13px;">Build Canada Homes &middot; Ontario &middot; Seven Projects</span></div>
+        <h1 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:60px;line-height:1.05;color:#fff;margin:0;letter-spacing:-0.005em;max-width:880px;">A ~$50M impact fund.<br><span style="color:#B7C7AF;font-style:italic;">The fund becomes the landowner.</span></h1>
+        <p style="font-size:18px;line-height:1.6;color:#C7D1DA;margin:24px 0 0;max-width:700px;text-wrap:pretty;">Virtue Impact Fund deploys across seven Build Canada Homes projects &mdash; contributing land, letting federal capital build, recovering most of its basis at close, and holding cash-flowing assets with Year-20 buyouts. One repeatable mechanic, a diversified Ontario portfolio.</p>
+      </div>
+      <div style="display:flex;gap:34px;border-top:1px solid rgba(255,255,255,0.16);padding-top:24px;">
+        <div><div class="vif-num" style="font-size:36px;color:#fff;">7 projects</div><div style="font-size:12.5px;color:#9FB0BA;margin-top:7px;line-height:1.4;max-width:150px;">across Ontario</div></div>
+        <div><div class="vif-num" style="font-size:36px;color:#fff;">~$50M</div><div style="font-size:12.5px;color:#9FB0BA;margin-top:7px;line-height:1.4;max-width:150px;">target fund</div></div>
+        <div><div class="vif-num" style="font-size:36px;color:#fff;">40%</div><div style="font-size:12.5px;color:#9FB0BA;margin-top:7px;line-height:1.4;max-width:150px;">Build Canada Homes grants</div></div>
+        <div><div class="vif-num" style="font-size:36px;color:#fff;">~590 homes</div><div style="font-size:12.5px;color:#9FB0BA;margin-top:7px;line-height:1.4;max-width:150px;">+ the 8440 flagship</div></div>
+      </div>
+    </div>
+    <div style="flex:1;position:relative;background:#2c3e4c;overflow:hidden;">
+      <img src="assets/photos/keele-building.jpg" alt="Build Canada Homes portfolio" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;">
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(55,83,107,0.86) 0%,rgba(55,83,107,0) 34%);"></div>
+    </div>
+  </section>
+
+  <!-- ============ 02 THESIS ============ -->
+  <section data-label="The Thesis" data-screen-label="The Thesis" data-speaker-notes="The fund's whole thesis: become the landowner, contribute land instead of cash, and let the federal Build Canada Homes grant plus CMHC do the heavy lifting. Federal capital makes affordable housing financeable; the fund captures the land value, an income split and a Year-20 buyout — repeated across seven sites." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">The Thesis</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:52px;line-height:1.05;color:#37536B;margin:22px 0 14px;max-width:1180px;">Federal capital builds it. <span style="font-style:italic;color:#8FA089;">The fund owns the land.</span></h2>
+    <p style="font-size:18px;line-height:1.6;color:#52606a;margin:0 0 44px;max-width:1040px;text-wrap:pretty;">A 40% Build Canada Homes grant plus a CMHC MLI Select mortgage make affordable housing finance on its own income &mdash; with the fund contributing land, not cash. The fund recovers most of its basis at close and keeps the asset, the income and a Year-20 buyout. The same mechanic, repeated across seven Ontario sites.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;border-top:3px solid #8FA089;padding:30px 28px;"><div class="vif-eyebrow" style="font-size:11px;color:#8C6A30;margin-bottom:14px;">Capital-light</div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:26px;color:#37536B;margin:0 0 10px;">Grants fund ~95%</h3><p style="font-size:15px;line-height:1.5;color:#52606a;margin:0;">Federal grants + senior debt + municipal pieces fund the build &mdash; the fund's equity is a small slice.</p></div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;border-top:3px solid #8C6A30;padding:30px 28px;"><div class="vif-eyebrow" style="font-size:11px;color:#8C6A30;margin-bottom:14px;">Capital-back-fast</div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:26px;color:#37536B;margin:0 0 10px;">Basis back at close</h3><p style="font-size:15px;line-height:1.5;color:#52606a;margin:0;">The fund recovers ~75% of each land basis at close &mdash; capital returns in years, not decades.</p></div>
+      <div style="background:#37536B;border-radius:12px;padding:30px 28px;color:#fff;"><div class="vif-eyebrow" style="font-size:11px;color:#B89B5A;margin-bottom:14px;">Impact + return</div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:26px;color:#fff;margin:0 0 10px;">Affordable, owned, paid</h3><p style="font-size:15px;line-height:1.5;color:#C7D1DA;margin:0;">Permanently affordable homes, an owned asset base, and 60% of cash flow + buyouts.</p></div>
+    </div>
+    <div style="position:absolute;left:120px;right:120px;bottom:40px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &times; Heal &middot; The Fund</span><span class="vif-foot">2 / 9</span></div>
+  </section>
+
+  <!-- ============ 03 THE PORTFOLIO ============ -->
+  <section data-label="The Portfolio" data-screen-label="The Portfolio" data-speaker-notes="The seven projects: 8440 Highway 27 (Vaughan flagship — hospitality + Heal Living), Lakeshore (owned), Keele Street (King City rental), 584 Oakwood (Toronto retirement + Heal House), 27 Blake (Barrie, approved), Listowel (the proof asset), and 286 Ardagh Road (Barrie, concept). A diversified Ontario portfolio on one mechanic." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:88px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">The Portfolio</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:46px;line-height:1.04;color:#37536B;margin:18px 0 26px;">Seven projects, one mechanic.</h2>
+    <table style="width:100%;border-collapse:collapse;">
+      <thead><tr>
+        <th style="text-align:left;padding:11px 12px;border-bottom:1.5px solid #37536B;font-family:'Jost';font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:#6a767f;">Project</th>
+        <th style="text-align:left;padding:11px 12px;border-bottom:1.5px solid #37536B;font-family:'Jost';font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:#6a767f;">Location</th>
+        <th style="text-align:left;padding:11px 12px;border-bottom:1.5px solid #37536B;font-family:'Jost';font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:#6a767f;">Type</th>
+        <th style="text-align:right;padding:11px 12px;border-bottom:1.5px solid #37536B;font-family:'Jost';font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:#6a767f;">Homes</th>
+        <th style="text-align:right;padding:11px 12px;border-bottom:1.5px solid #37536B;font-family:'Jost';font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:#6a767f;">Status</th>
+      </tr></thead>
+      <tbody style="font-size:15.5px;color:#243039;">
+        <tr><td style="padding:12px;border-bottom:1px solid #E2DCCF;font-weight:600;color:#37536B;">8440 Highway 27</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;">Vaughan</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;">Hospitality + Heal Living</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;text-align:right;">254 keys +</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;text-align:right;color:#8C6A30;">Flagship</td></tr>
+        <tr><td style="padding:12px;border-bottom:1px solid #E2DCCF;font-weight:600;color:#37536B;">Lakeshore</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;">Ontario</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;">Retirement + rental + hospitality</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;text-align:right;">254</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;text-align:right;color:#8FA089;">Owned</td></tr>
+        <tr><td style="padding:12px;border-bottom:1px solid #E2DCCF;font-weight:600;color:#37536B;">Keele Street</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;">King City</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;">Rental community</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;text-align:right;">105</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;text-align:right;">Modeled</td></tr>
+        <tr><td style="padding:12px;border-bottom:1px solid #E2DCCF;font-weight:600;color:#37536B;">584 Oakwood</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;">Toronto</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;">Retirement + Heal House</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;text-align:right;">51</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;text-align:right;">Modeled</td></tr>
+        <tr><td style="padding:12px;border-bottom:1px solid #E2DCCF;font-weight:600;color:#37536B;">27 Blake Street</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;">Barrie</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;">Rental community</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;text-align:right;">50</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;text-align:right;color:#8C6A30;">Approved</td></tr>
+        <tr><td style="padding:12px;border-bottom:1px solid #E2DCCF;font-weight:600;color:#37536B;">Listowel</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;">Ontario</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;">Retirement (the proof asset)</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;text-align:right;">48</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;text-align:right;">First build</td></tr>
+        <tr><td style="padding:12px;border-bottom:1px solid #E2DCCF;font-weight:600;color:#37536B;">286 Ardagh Road</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;">Barrie</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;">Rental (two 6-storey)</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;text-align:right;">~80</td><td style="padding:12px;border-bottom:1px solid #E2DCCF;text-align:right;color:#8a949c;">Concept</td></tr>
+      </tbody>
+    </table>
+    <div style="position:absolute;left:120px;right:120px;bottom:40px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &times; Heal &middot; The Fund</span><span class="vif-foot">3 / 9</span></div>
+  </section>
+
+  <!-- ============ 04 FUND SIZING ============ -->
+  <section data-label="Fund Sizing" data-screen-label="Fund Sizing" data-speaker-notes="How the ~$50M splits. 8440 carries the largest slice (~$30M — its acquisition plus a first redevelopment tranche). The six Build Canada Homes deals together need only ~$18M, because grants and debt fund ~95%. Lakeshore ~$5.5M (owned). Illustrative; 8440's slice and Lakeshore/Ardagh figures to be confirmed." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">Fund Sizing &middot; ~$50M</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:46px;line-height:1.04;color:#37536B;margin:18px 0 10px;">Where the money goes.</h2>
+    <p style="font-size:15px;line-height:1.6;color:#8a949c;margin:0 0 26px;max-width:1040px;">Illustrative, pre-diligence. The flagship carries most of the equity; the BCH deals are capital-light.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#E2DCCF;border:1px solid #E2DCCF;margin-bottom:22px;">
+      <div style="background:#fff;padding:24px 22px;"><div class="vif-num" style="font-size:38px;color:#8C6A30;">~$30M</div><div class="vif-foot" style="color:#6a767f;margin-top:10px;">8440 Highway 27 (flagship)</div></div>
+      <div style="background:#fff;padding:24px 22px;"><div class="vif-num" style="font-size:38px;color:#37536B;">~$5.5M</div><div class="vif-foot" style="color:#6a767f;margin-top:10px;">Lakeshore (owned)</div></div>
+      <div style="background:#fff;padding:24px 22px;"><div class="vif-num" style="font-size:38px;color:#37536B;">~$5.0M</div><div class="vif-foot" style="color:#6a767f;margin-top:10px;">Keele · King City</div></div>
+      <div style="background:#fff;padding:24px 22px;"><div class="vif-num" style="font-size:38px;color:#37536B;">~$3.0M</div><div class="vif-foot" style="color:#6a767f;margin-top:10px;">584 Oakwood</div></div>
+      <div style="background:#fff;padding:24px 22px;"><div class="vif-num" style="font-size:38px;color:#37536B;">~$2.0M</div><div class="vif-foot" style="color:#6a767f;margin-top:10px;">286 Ardagh (concept)</div></div>
+      <div style="background:#fff;padding:24px 22px;"><div class="vif-num" style="font-size:38px;color:#37536B;">~$1.8M</div><div class="vif-foot" style="color:#6a767f;margin-top:10px;">27 Blake · Barrie</div></div>
+      <div style="background:#fff;padding:24px 22px;"><div class="vif-num" style="font-size:38px;color:#37536B;">~$1.0M</div><div class="vif-foot" style="color:#6a767f;margin-top:10px;">Listowel</div></div>
+      <div style="background:#37536B;padding:24px 22px;"><div class="vif-num" style="font-size:38px;color:#fff;">~$48M</div><div class="vif-foot" style="color:#B7C7AF;margin-top:10px;">total &middot; a ~$50M fund</div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;background:#EEEAE0;border-radius:12px;padding:18px 30px;"><span class="vif-eyebrow" style="font-size:12px;color:#8FA089;">The shape</span><span style="flex:1;font-size:15.5px;line-height:1.5;color:#52606a;">The six Build Canada Homes deals together need only <strong style="color:#37536B;">~$18M</strong> &mdash; the fund's size is really driven by how much of the 8440 flagship it carries.</span></div>
+    <div style="position:absolute;left:120px;right:120px;bottom:40px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &times; Heal &middot; The Fund</span><span class="vif-foot">4 / 9</span></div>
+  </section>
+
+  <!-- ============ 05 PORTFOLIO NUMBERS ============ -->
+  <section data-label="The Numbers" data-screen-label="The Numbers" data-speaker-notes="Portfolio totals (illustrative, pre-diligence): ~590 BCH homes plus the 8440 flagship, ~$400M+ of development, ~$120M+ of non-repayable federal Build Canada Homes grants, ~175+ permanently affordable homes, on a ~$50M fund." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">The Numbers</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:46px;line-height:1.04;color:#37536B;margin:18px 0 10px;">$50M of equity, <span style="font-style:italic;color:#8FA089;">$400M+ of impact.</span></h2>
+    <p style="font-size:15px;line-height:1.6;color:#8a949c;margin:0 0 32px;max-width:1000px;">Illustrative, pre-diligence; subject to appraisal, QS, and BCH / CMHC confirmation.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#E2DCCF;border:1px solid #E2DCCF;">
+      <div style="background:#fff;padding:30px 24px;"><div class="vif-num" style="font-size:46px;color:#8C6A30;">~$50M</div><div class="vif-foot" style="color:#6a767f;margin-top:12px;">Target fund (equity)</div></div>
+      <div style="background:#fff;padding:30px 24px;"><div class="vif-num" style="font-size:46px;color:#37536B;">~$400M+</div><div class="vif-foot" style="color:#6a767f;margin-top:12px;">Development unlocked</div></div>
+      <div style="background:#fff;padding:30px 24px;"><div class="vif-num" style="font-size:46px;color:#8C6A30;">~$120M+</div><div class="vif-foot" style="color:#6a767f;margin-top:12px;">Federal BCH grants</div></div>
+      <div style="background:#fff;padding:30px 24px;"><div class="vif-num" style="font-size:46px;color:#37536B;">~590</div><div class="vif-foot" style="color:#6a767f;margin-top:12px;">Homes + 8440 flagship</div></div>
+      <div style="background:#fff;padding:30px 24px;"><div class="vif-num" style="font-size:46px;color:#37536B;">~175+</div><div class="vif-foot" style="color:#6a767f;margin-top:12px;">Permanently affordable</div></div>
+      <div style="background:#fff;padding:30px 24px;"><div class="vif-num" style="font-size:46px;color:#37536B;">40%</div><div class="vif-foot" style="color:#6a767f;margin-top:12px;">Grant &middot; non-repayable</div></div>
+      <div style="background:#fff;padding:30px 24px;"><div class="vif-num" style="font-size:46px;color:#37536B;">7</div><div class="vif-foot" style="color:#6a767f;margin-top:12px;">Projects · Ontario</div></div>
+      <div style="background:#37536B;padding:30px 24px;"><div class="vif-num" style="font-size:46px;color:#fff;">~8&times;</div><div class="vif-foot" style="color:#B7C7AF;margin-top:12px;">Development : equity</div></div>
+    </div>
+    <div style="position:absolute;left:120px;right:120px;bottom:40px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &times; Heal &middot; The Fund</span><span class="vif-foot">5 / 9</span></div>
+  </section>
+
+  <!-- ============ 06 RETURNS ============ -->
+  <section data-label="Returns" data-screen-label="Returns" data-speaker-notes="Fund-level returns (illustrative, before fund expenses). Capital comes back fast — the BCH deals return ~75% of each land basis at close, so the BCH slice is largely recovered in ~3-4 years; 8440 recovers by ~Year 10. Over 20 years the fund returns roughly 3x — ~$150M+ before expenses — from 60% cash-flow shares, Year-20 buyouts, and the 8440 flagship." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">Returns &middot; Before Expenses</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:46px;line-height:1.05;color:#37536B;margin:18px 0 12px;">Capital back in years. <span style="font-style:italic;color:#8FA089;">~3× over twenty.</span></h2>
+    <p style="font-size:16px;line-height:1.6;color:#52606a;margin:0 0 36px;max-width:1060px;text-wrap:pretty;">The land-unlock returns most of each basis at close, so the fund is largely whole early &mdash; then the 60% cash-flow shares, Year-20 buyouts and the flagship compound the rest.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px;">
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;border-top:3px solid #8FA089;padding:28px 26px;"><div class="vif-num" style="font-size:44px;color:#37536B;">~3&ndash;4 yrs</div><div style="font-size:14px;color:#52606a;margin-top:10px;line-height:1.45;">to recover the BCH capital (basis back at close)</div></div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;border-top:3px solid #8C6A30;padding:28px 26px;"><div class="vif-num" style="font-size:44px;color:#37536B;">~$150M+</div><div style="font-size:14px;color:#52606a;margin-top:10px;line-height:1.45;">total to the fund over 20 yrs, before expenses</div></div>
+      <div style="background:#37536B;border-radius:12px;padding:28px 26px;color:#fff;"><div class="vif-num" style="font-size:44px;color:#fff;">~3&times;</div><div style="font-size:14px;color:#C7D1DA;margin-top:10px;line-height:1.45;">on the ~$50M fund, illustrative</div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;background:#37536B;border-radius:12px;padding:18px 30px;color:#fff;"><span class="vif-eyebrow" style="font-size:12px;color:#B89B5A;">The point</span><span style="flex:1;font-size:15.5px;line-height:1.5;color:#dbe3e8;">Because the deals need so little equity and return it so fast, the fund recycles capital across the pipeline &mdash; <strong style="color:#fff;">capital preservation first, compounding second, impact throughout.</strong></span></div>
+    <div style="position:absolute;left:120px;right:120px;bottom:40px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &times; Heal &middot; The Fund</span><span class="vif-foot">6 / 9</span></div>
+  </section>
+
+  <!-- ============ 07 WHY NOW ============ -->
+  <section data-label="Why Now" data-screen-label="Why Now" data-speaker-notes="Why now: Build Canada Homes is a live federal program putting non-repayable capital into affordable housing; Canada's housing shortage is acute and structural; the model is capital-light and government-aligned; and the fund has a repeatable pipeline with one already approved and one already owned." style="width:100%;height:100%;position:relative;background:#37536B;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;color:#EAF0F2;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#B89B5A;">Why Now</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:48px;line-height:1.05;color:#fff;margin:18px 0 14px;max-width:1180px;">Federal money, a housing crisis, <span style="font-style:italic;color:#B7C7AF;">a repeatable engine.</span></h2>
+    <p style="font-size:18px;line-height:1.6;color:#C7D1DA;margin:0 0 44px;max-width:1040px;text-wrap:pretty;">Build Canada Homes is putting non-repayable capital into housing now; the shortage is structural; and the fund's model turns that public capital into private, impact-aligned returns &mdash; capital-light and repeatable.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+      <div style="border-top:2px solid #8FA089;padding-top:20px;"><div class="vif-num" style="font-size:26px;color:#fff;margin-bottom:8px;">Federal capital</div><p style="font-size:14px;line-height:1.5;color:#C7D1DA;margin:0;">40% non-repayable grants, live now.</p></div>
+      <div style="border-top:2px solid #B89B5A;padding-top:20px;"><div class="vif-num" style="font-size:26px;color:#fff;margin-bottom:8px;">Structural demand</div><p style="font-size:14px;line-height:1.5;color:#C7D1DA;margin:0;">An acute, durable housing shortage.</p></div>
+      <div style="border-top:2px solid #C7D1DA;padding-top:20px;"><div class="vif-num" style="font-size:26px;color:#fff;margin-bottom:8px;">Capital-light</div><p style="font-size:14px;line-height:1.5;color:#C7D1DA;margin:0;">Grants + debt fund ~95% of cost.</p></div>
+      <div style="border-top:2px solid #8FA089;padding-top:20px;"><div class="vif-num" style="font-size:26px;color:#fff;margin-bottom:8px;">Ready pipeline</div><p style="font-size:14px;line-height:1.5;color:#C7D1DA;margin:0;">One approved, one owned, more behind.</p></div>
+    </div>
+    <div style="position:absolute;left:120px;right:120px;bottom:40px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot" style="color:rgba(246,241,232,0.7);">Virtue Impact Fund &times; Heal &middot; The Fund</span><span class="vif-foot" style="color:rgba(246,241,232,0.7);">7 / 9</span></div>
+  </section>
+
+  <!-- ============ 08 DILIGENCE / WHAT'S NEXT ============ -->
+  <section data-label="What's Next" data-screen-label="What's Next" data-speaker-notes="What we're confirming at the fund level: the 8440 redevelopment numbers and the fund's slice of it, Lakeshore's updated cost and program, Ardagh's land value and unit count, and the BCH/CMHC grant confirmations per project. The per-deal decks carry the project-level diligence." style="width:100%;height:100%;position:relative;background:#F6F4EF;padding:96px 120px;overflow:hidden;font-family:'Jost',sans-serif;">
+    <div style="display:flex;align-items:center;gap:14px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#8FA089;">What We're Confirming</span></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:46px;line-height:1.05;color:#37536B;margin:18px 0 12px;">Honest about the open items.</h2>
+    <p style="font-size:16px;line-height:1.6;color:#52606a;margin:0 0 34px;max-width:1040px;text-wrap:pretty;">The fund figures are illustrative and pre-diligence &mdash; these are the items that firm them up.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;padding:20px 24px;font-size:15px;line-height:1.45;color:#243039;"><strong style="color:#37536B;">8440 flagship</strong> &mdash; finalize the redevelopment numbers and the fund's slice (~$30M assumed here).</div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;padding:20px 24px;font-size:15px;line-height:1.45;color:#243039;"><strong style="color:#37536B;">Lakeshore</strong> &mdash; confirm the updated cost, program and equity (it is already owned).</div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;padding:20px 24px;font-size:15px;line-height:1.45;color:#243039;"><strong style="color:#37536B;">Ardagh Road</strong> &mdash; confirm land value and unit count to move it from concept to modeled.</div>
+      <div style="background:#fff;border:1px solid #E7E2D8;border-radius:12px;padding:20px 24px;font-size:15px;line-height:1.45;color:#243039;"><strong style="color:#37536B;">BCH / CMHC</strong> &mdash; grant eligibility and MLI Select sizing confirmed per project.</div>
+    </div>
+    <div style="position:absolute;left:120px;right:120px;bottom:40px;display:flex;justify-content:space-between;align-items:center;"><span class="vif-foot">Virtue Impact Fund &times; Heal &middot; The Fund</span><span class="vif-foot">8 / 9</span></div>
+  </section>
+
+  <!-- ============ 09 CLOSING ============ -->
+  <section data-label="The Ask" data-screen-label="The Ask" data-speaker-notes="Closing. A ~$50M fund that becomes the landowner across seven Ontario Build Canada Homes projects — recovering capital fast, holding cash-flowing assets, and delivering affordable homes alongside ~3x returns over 20 years before expenses." style="width:100%;height:100%;position:relative;background:#2A3F50;display:flex;align-items:center;overflow:hidden;font-family:'Jost',sans-serif;color:#EAF0F2;">
+    <div style="padding:0 120px;max-width:1280px;">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:26px;"><span style="width:26px;height:1.5px;background:#B89B5A;"></span><span class="vif-eyebrow" style="color:#B89B5A;">Virtue Impact Fund &middot; The Fund</span></div>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:64px;line-height:1.05;color:#fff;margin:0;letter-spacing:-0.01em;max-width:1200px;">Become the landowner. Build the homes.<br><span style="font-style:italic;color:#B7C7AF;">Recycle the capital.</span></h1>
+      <p style="font-size:19px;line-height:1.6;color:#C7D1DA;margin:30px 0 0;max-width:1000px;text-wrap:pretty;">A ~$50M fund across seven Ontario Build Canada Homes projects &mdash; federal capital builds, the fund recovers most of its basis at close, and holds cash-flowing assets with Year-20 buyouts. Affordable homes and ~3× over 20 years, before expenses.</p>
+      <div style="margin-top:40px;display:flex;gap:38px;border-top:1px solid rgba(255,255,255,0.16);padding-top:26px;">
+        <div><div class="vif-num" style="font-size:34px;color:#fff;">~$50M</div><div style="font-size:13px;color:#9FB0BA;margin-top:6px;">7 projects · Ontario</div></div>
+        <div><div class="vif-num" style="font-size:34px;color:#fff;">~590 homes</div><div style="font-size:13px;color:#9FB0BA;margin-top:6px;">~175+ affordable</div></div>
+        <div><div class="vif-num" style="font-size:34px;color:#fff;">~3&times;</div><div style="font-size:13px;color:#9FB0BA;margin-top:6px;">20-yr · before expenses</div></div>
+        <div><div class="vif-num" style="font-size:34px;color:#fff;">invest@virtueimpactfund.ca</div><div style="font-size:13px;color:#9FB0BA;margin-top:6px;">Virtue Impact Fund &times; Heal</div></div>
+      </div>
+    </div>
+  </section>
+
+</x-import>
+</x-dc>
+</body>
+</html>
