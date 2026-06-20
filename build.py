@@ -36,6 +36,8 @@ DECKS = [
      "keele-street-king-city.html", "Virtue Impact Fund × Heal — 12882 Keele Street, King City"),
     ("Virtue Impact Fund - 584 Oakwood Avenue.dc.html",
      "584-oakwood-avenue.html", "Virtue Impact Fund × Heal — 584 Oakwood Avenue"),
+    ("Virtue Impact Fund - 27 Blake Street Barrie.dc.html",
+     "27-blake-street-barrie.html", "Virtue Impact Fund × Heal — 27-31 Blake Street, Barrie"),
 ]
 
 PAGE = """<!DOCTYPE html>
