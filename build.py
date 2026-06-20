@@ -53,7 +53,14 @@ PAGE = """<!DOCTYPE html>
 <title>{title}</title>
 <!-- ===== fonts + brand helper classes (from the design source helmet) ===== -->
 {helmet}
-<link rel="icon" type="image/png" href="assets/healhouse/HealHouse_AppIcon_1024.png">
+<link rel="icon" type="image/png" href="assets/favicon-vif.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="A ~$50M impact fund across seven Build Canada Homes projects in Ontario — the fund becomes the landowner.">
+<meta property="og:image" content="https://jasonallenjohn-cell.github.io/virtue-impact-fund/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:image" content="https://jasonallenjohn-cell.github.io/virtue-impact-fund/assets/og-image.png">
 <link rel="stylesheet" href="deck.css">
 </head>
 <body>
