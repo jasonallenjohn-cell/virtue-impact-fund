@@ -66,7 +66,7 @@ PAGE = """<!DOCTYPE html>
 <link rel="stylesheet" href="deck.css">
 </head>
 <body>
-<a class="deck-home" href="index.html" title="Back to all materials">&larr; All materials</a>
+<a class="deck-home" href="materials.html" title="Back to all materials">&larr; All materials</a>
 <div class="stage" id="stage">
   <div class="canvas" id="canvas">
 {slides}
