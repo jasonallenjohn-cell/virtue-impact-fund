@@ -22,6 +22,8 @@ SRC = HERE / "source"
 
 # source filename -> (output filename, <title>)
 DECKS = [
+    ("Virtue Impact Fund - Platform Investor Deck.dc.html",
+     "platform-investor-deck.html", "Virtue Impact Fund × Heal — Platform Investor Deck"),
     ("Virtue Impact Fund - The Fund.dc.html",
      "the-fund.html", "Virtue Impact Fund — The Fund"),
     ("Virtue Impact Fund - Platform Ecosystem.dc.html",
