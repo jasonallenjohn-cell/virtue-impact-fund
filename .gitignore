@@ -1,2 +1,5 @@
 .DS_Store
 *.log
+
+_pre_compliance_backup/
+insert_investment_case.py
