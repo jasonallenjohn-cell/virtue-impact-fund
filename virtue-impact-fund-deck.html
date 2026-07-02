@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="robots" content="noindex,nofollow" />
+<script src="gate.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Virtue Impact Fund — Investor Deck</title>
+<link rel="icon" href="assets/vif-deck/healhouse-symbol-olive.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Belleza&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fdfdf6;
+    --parchment:#e5dfd2;
+    --sand:#a6a998;
+    --sand-deep:#7e8463;
+    --olive:#22344e;
+    --olive-deep:#12203a;
+    --espresso:#1c2b40;
+    --gold:#7a8b43;
+    --gold-deep:#5f6c33;
+    --gold-light:#daddcf;
+    --ink:#34301f;
+    --ink-soft:#5c5647;
+    --ink-faint:#8c8676;
+    --bone:#fdfdf6;
+    --line:rgba(52,48,31,.14);
+    --line-soft:rgba(52,48,31,.08);
+    --line-cream:rgba(246,241,232,.18);
+    --line-cream-soft:rgba(246,241,232,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#34301f;overflow:hidden}
+  deck-stage:not(:defined){visibility:hidden}
+  deck-stage{background:#34301f}
+
+  /* ---------- base slide ---------- */
+  .slide{
+    position:relative;width:100%;height:100%;overflow:hidden;
+    background:var(--cream);color:var(--ink);
+    font-family:'Montserrat',sans-serif;font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  .slide.parch{background:linear-gradient(180deg,var(--parchment),var(--cream))}
+  .slide.olive{background:var(--olive);color:var(--bone)}
+  .slide.espresso{background:var(--espresso);color:var(--bone)}
+  /* warm paper grain */
+  .slide::before{
+    content:"";position:absolute;inset:0;pointer-events:none;z-index:1;opacity:.5;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='0.05'/></svg>");
+  }
+  .slide.olive::before,.slide.espresso::before{opacity:.32;mix-blend-mode:overlay}
+  .pad{position:absolute;inset:0;padding:92px 104px 88px;z-index:3;display:flex;flex-direction:column}
+
+  /* ---------- type ---------- */
+  .display{font-family:'Belleza',serif;font-weight:400;line-height:1.0;letter-spacing:-0.01em}
+  .display i{font-style:italic;color:var(--gold-deep)}
+  .olive .display i,.espresso .display i{color:var(--gold-light)}
+  .eyebrow{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold-deep)}
+  .olive .eyebrow,.espresso .eyebrow{color:var(--gold-light)}
+  .lead{font-family:'Belleza',serif;font-weight:400;font-size:30px;line-height:1.38;color:var(--ink);max-width:1180px}
+  .olive .lead,.espresso .lead{color:rgba(246,241,232,.9)}
+  .lead i{font-style:italic;color:var(--gold-deep)}
+  .olive .lead i,.espresso .lead i{color:var(--gold-light)}
+  p.body{font-size:21px;line-height:1.55;color:var(--ink-soft)}
+  p.body strong{color:var(--ink);font-weight:600}
+  .olive p.body,.espresso p.body{color:rgba(246,241,232,.74)}
+  .olive p.body strong,.espresso p.body strong{color:var(--bone)}
+
+  /* ---------- chrome ---------- */
+  .chrome{position:absolute;left:104px;right:104px;z-index:6;display:flex;align-items:center;justify-content:space-between;
+    font-family:'Montserrat',sans-serif;font-size:15px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint)}
+  .olive .chrome,.espresso .chrome{color:rgba(246,241,232,.5)}
+  .chrome.bot{bottom:54px}
+  .chrome .mk{display:flex;align-items:center;gap:13px}
+  .chrome .mk img{height:22px;width:auto;display:block;opacity:.9}
+  .chrome .mk span{padding-top:2px}
+  .chrome .idx span{color:var(--gold-deep)}
+  .olive .chrome .idx span,.espresso .chrome .idx span{color:var(--gold-light)}
+
+  /* section header used on most content slides */
+  .head{display:flex;align-items:flex-start;gap:26px;margin-bottom:8px}
+  .head .num{font-family:'Belleza',serif;font-style:italic;font-size:30px;color:var(--gold-deep);line-height:1;padding-top:6px;min-width:42px}
+  .head .htxt .eyebrow{margin-bottom:18px}
+  .head h2{font-family:'Belleza',serif;font-weight:400;font-size:62px;line-height:1.0;letter-spacing:-0.01em}
+  .head h2 i{font-style:italic;color:var(--gold-deep)}
+  .olive .head h2 i,.espresso .head h2 i{color:var(--gold-light)}
+
+  .gold-rule{height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+
+  /* ---------- mark glyph (concentric) ---------- */
+  .ring{display:inline-flex}
+  .ring svg{display:block}
+
+  /* ---------- cards ---------- */
+  .card{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:42px 40px;display:flex;flex-direction:column}
+  .parch .card{background:#fdfdf6}
+  .card .ci{font-family:'Belleza',serif;font-style:italic;font-size:28px;color:var(--gold-deep);line-height:1;margin-bottom:22px}
+  .card h3{font-family:'Belleza',serif;font-weight:400;font-size:30px;line-height:1.08;margin-bottom:14px}
+  .card p{font-size:18px;line-height:1.5;color:var(--ink-soft)}
+
+  /* numbered circle */
+  .circ{width:64px;height:64px;border:1.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-family:'Belleza',serif;font-size:28px;color:var(--gold-deep);flex-shrink:0}
+  .olive .circ,.espresso .circ{border-color:var(--gold-light);color:var(--gold-light)}
+
+  /* ---------- entrance animation ---------- */
+  @media (prefers-reduced-motion:no-preference){
+    [data-deck-active] .anim{animation:rise .62s cubic-bezier(.2,.7,.2,1) both}
+    [data-deck-active] .anim2{animation:rise .62s cubic-bezier(.2,.7,.2,1) .09s both}
+    [data-deck-active] .anim3{animation:rise .62s cubic-bezier(.2,.7,.2,1) .18s both}
+    [data-deck-active] .anim4{animation:rise .62s cubic-bezier(.2,.7,.2,1) .27s both}
+    [data-deck-active] .stg > *{animation:rise .6s cubic-bezier(.2,.7,.2,1) both}
+    [data-deck-active] .stg > *:nth-child(1){animation-delay:.06s}
+    [data-deck-active] .stg > *:nth-child(2){animation-delay:.14s}
+    [data-deck-active] .stg > *:nth-child(3){animation-delay:.22s}
+    [data-deck-active] .stg > *:nth-child(4){animation-delay:.30s}
+    [data-deck-active] .stg > *:nth-child(5){animation-delay:.38s}
+    [data-deck-active] .stg > *:nth-child(6){animation-delay:.46s}
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+  /* =========================================================
+     SLIDE-SPECIFIC
+     ========================================================= */
+
+  /* 01 cover */
+  .s-cover{background:var(--espresso)}
+  .s-cover .photo{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;
+    background-image:url('assets/vif-deck/golden-courtyard.jpg')}
+  .s-cover .scrim{position:absolute;inset:0;z-index:1;
+    background:linear-gradient(180deg,rgba(28,22,14,.42) 0%,rgba(28,22,14,.28) 38%,rgba(28,22,14,.86) 100%)}
+  .s-cover .pad{justify-content:space-between}
+  .s-cover .logo{height:50px;width:auto;align-self:flex-start}
+  .s-cover .center{margin-top:auto}
+  .s-cover h1{font-family:'Belleza',serif;font-weight:400;font-size:104px;line-height:1.0;letter-spacing:-0.012em;color:var(--bone);max-width:1280px}
+  .s-cover h1 i{font-style:italic;color:var(--gold-light)}
+  .s-cover .tag{margin-top:30px;font-family:'Belleza',serif;font-style:italic;font-weight:400;font-size:32px;color:rgba(246,241,232,.86);max-width:920px;line-height:1.4}
+  .s-cover .meta{margin-top:64px;display:flex;gap:0;border-top:1px solid var(--line-cream);padding-top:32px}
+  .s-cover .meta > div{padding-right:64px;margin-right:64px;border-right:1px solid var(--line-cream)}
+  .s-cover .meta > div:last-child{border-right:none}
+  .s-cover .meta .k{font-family:'Montserrat';font-size:16px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px}
+  .s-cover .meta .v{font-family:'Belleza',serif;font-size:28px;color:var(--bone)}
+  .s-cover .foot{display:flex;justify-content:space-between;align-items:flex-end;margin-top:44px;
+    font-family:'Montserrat';font-size:16px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(246,241,232,.6)}
+
+  /* 02 problem */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:auto}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:auto}
+  .p-stat{font-family:'Belleza',serif;font-size:24px;color:var(--gold-deep);font-style:italic}
+
+  /* 03 solution */
+  .sol-intro{max-width:1180px;margin:22px 0 auto}
+  .sol-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:46px}
+  .sol-grid .card{padding:36px 32px}
+  .sol-grid .ci{width:54px;height:54px;border:1.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:24px;margin-bottom:24px}
+  .sol-grid h3{font-size:27px}
+  .sol-grid p{font-size:16.5px}
+
+  /* 04 traction */
+  .trac-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:18px}
+  .trac-stats > div{background:var(--cream);padding:44px 38px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between}
+  .trac-stats .v{font-family:'Belleza',serif;font-size:84px;line-height:.9;color:var(--gold-deep);letter-spacing:-0.02em}
+  .trac-stats .v.sm{font-size:62px}
+  .trac-stats .k{font-family:'Montserrat';font-size:17px;line-height:1.45;color:var(--ink-soft);max-width:240px}
+  .trac-why{margin-top:24px;background:var(--olive);color:var(--bone);border-radius:18px;padding:40px 46px;display:flex;gap:36px;align-items:center}
+  .trac-why .lbl{font-family:'Belleza',serif;font-style:italic;font-size:34px;color:var(--gold-light);line-height:1.05;min-width:230px}
+  .trac-why p{font-size:19px;line-height:1.55;color:rgba(246,241,232,.84)}
+  .trac-why p strong{color:var(--bone);font-weight:600}
+
+  /* 05 business model flow */
+  .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;align-items:stretch;gap:0;margin-top:auto}
+  .flow .step{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:34px 30px;display:flex;flex-direction:column}
+  .flow .step .n{font-family:'Montserrat';font-weight:700;font-size:13px;letter-spacing:0.18em;color:var(--gold-deep);margin-bottom:auto}
+  .flow .step h3{font-family:'Belleza',serif;font-weight:400;font-size:26px;line-height:1.1;margin:30px 0 12px}
+  .flow .step p{font-size:15.5px;line-height:1.45;color:var(--ink-soft)}
+  .flow .arrow{display:flex;align-items:center;justify-content:center;font-family:'Belleza';font-size:34px;color:var(--gold);padding:0 14px}
+  .note-line{margin-top:30px;display:flex;align-items:center;gap:20px}
+  .note-line .gold-rule{width:90px;flex-shrink:0}
+  .note-line p{font-family:'Belleza',serif;font-style:italic;font-size:23px;color:var(--ink);line-height:1.4}
+  .note-line p b{font-style:normal;color:var(--gold-deep);font-weight:500}
+
+  /* 06 away platform (olive) */
+  .away-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}
+  .away-card{background:rgba(246,241,232,.05);border:1px solid var(--line-cream);border-radius:18px;padding:40px 38px;display:flex;flex-direction:column}
+  .away-card .n{font-family:'Belleza',serif;font-style:italic;font-size:30px;color:var(--gold-light);margin-bottom:22px}
+  .away-card h3{font-family:'Belleza',serif;font-weight:400;font-size:30px;line-height:1.08;color:var(--bone);margin-bottom:14px}
+  .away-card p{font-size:17px;line-height:1.5;color:rgba(246,241,232,.74);margin-bottom:auto}
+  .away-card .badge{margin-top:28px;align-self:flex-start;font-family:'Montserrat';font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-light);border:1px solid rgba(218,221,207,.5);border-radius:30px;padding:7px 16px}
+  .away-foot{margin-top:30px;display:flex;align-items:center;gap:22px}
+  .away-foot .gold-rule{width:90px;flex-shrink:0;background:linear-gradient(90deg,var(--gold-light),transparent)}
+  .away-foot p{font-family:'Belleza',serif;font-style:italic;font-size:24px;color:rgba(246,241,232,.92)}
+  .away-foot p b{font-style:normal;font-weight:500;color:var(--gold-light)}
+
+  /* 07 hotels / format ladder */
+  .ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px}
+  .ladder .rung{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:34px 30px;display:flex;flex-direction:column;position:relative}
+  .ladder .rung .bar{height:6px;border-radius:3px;background:var(--gold);margin-bottom:26px}
+  .ladder .rung:nth-child(1) .bar{width:30%}
+  .ladder .rung:nth-child(2) .bar{width:55%}
+  .ladder .rung:nth-child(3) .bar{width:100%}
+  .ladder .rung:nth-child(4) .bar{width:42%;background:repeating-linear-gradient(90deg,var(--gold) 0 10px,transparent 10px 18px)}
+  .ladder .rung h3{font-family:'Belleza',serif;font-weight:400;font-size:34px;margin-bottom:6px}
+  .ladder .rung .sz{font-family:'Montserrat';font-size:14px;font-weight:700;letter-spacing:0.08em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:18px}
+  .ladder .rung p{font-size:16px;line-height:1.45;color:var(--ink-soft)}
+  .ask-hotel{margin-top:26px;background:var(--espresso);color:var(--bone);border-radius:18px;padding:38px 46px;display:flex;gap:40px;align-items:center}
+  .ask-hotel .k{font-family:'Montserrat';font-size:13px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-light);min-width:210px;line-height:1.5}
+  .ask-hotel .q{font-family:'Belleza',serif;font-style:italic;font-size:25px;line-height:1.4;color:rgba(246,241,232,.94)}
+
+  /* 08 growth strategy */
+  .grow{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}
+  .grow .col{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:42px 38px;display:flex;flex-direction:column}
+  .grow .col .tag{font-family:'Montserrat';font-size:13px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px}
+  .grow .col h3{font-family:'Belleza',serif;font-weight:400;font-size:38px;margin-bottom:18px}
+  .grow .col p{font-size:17px;line-height:1.5;color:var(--ink-soft);margin-bottom:30px}
+  .grow .col .tags{margin-top:auto;display:flex;flex-direction:column;gap:10px}
+  .grow .col .tags span{font-family:'Montserrat';font-size:14.5px;font-weight:600;color:var(--ink);padding:11px 18px;border:1px solid var(--line);border-radius:30px;background:#fdfdf6}
+  .grow .col .tags span b{color:var(--gold-deep);font-weight:700}
+  .seq{margin-top:28px;display:flex;align-items:center;gap:22px}
+  .seq .gold-rule{width:90px;flex-shrink:0}
+  .seq p{font-family:'Belleza',serif;font-style:italic;font-size:23px;color:var(--ink);line-height:1.4}
+  .seq p b{font-style:normal;color:var(--gold-deep);font-weight:500}
+
+  /* 09 technology */
+  .tech-wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;margin-top:30px;flex:1;align-items:start}
+  .tech-lead .ring-big{margin-bottom:34px}
+  .tech-lead p{font-size:21px;line-height:1.6;color:var(--ink-soft);margin-bottom:26px}
+  .tech-lead p strong{color:var(--ink);font-weight:600}
+  .tech-lead .pill{display:inline-block;font-family:'Montserrat';font-size:16px;font-weight:600;color:var(--bone);background:var(--olive);padding:14px 26px;border-radius:10px;line-height:1.4}
+  .tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+  .tech-grid > div{background:var(--cream);padding:36px 34px}
+  .tech-grid .k{font-family:'Belleza',serif;font-size:25px;margin-bottom:12px}
+  .tech-grid .k i{font-style:italic;color:var(--gold-deep)}
+  .tech-grid p{font-size:16px;line-height:1.5;color:var(--ink-soft)}
+
+  /* 10 market */
+  .mkt{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px;align-items:end}
+  .mkt .ring-stat{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:44px 40px;text-align:left;display:flex;flex-direction:column}
+  .mkt .ring-stat .lab{font-family:'Montserrat';font-size:15px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:18px}
+  .mkt .ring-stat .v{font-family:'Belleza',serif;font-size:96px;line-height:.88;color:var(--ink);letter-spacing:-0.02em}
+  .mkt .ring-stat:nth-child(1) .v{font-size:108px;color:var(--gold-deep)}
+  .mkt .ring-stat p{font-size:16.5px;line-height:1.5;color:var(--ink-soft);margin-top:22px}
+  .mkt .ring-stat.tam{min-height:430px}
+  .mkt .ring-stat.sam{min-height:370px}
+  .mkt .ring-stat.som{min-height:310px}
+  .mkt-note{margin-top:26px;display:flex;align-items:center;gap:22px}
+  .mkt-note .gold-rule{width:90px;flex-shrink:0}
+  .mkt-note p{font-family:'Belleza',serif;font-style:italic;font-size:22px;color:var(--ink);line-height:1.4}
+  .mkt-note p b{font-style:normal;color:var(--gold-deep);font-weight:500}
+  .src{font-family:'Montserrat';font-size:13px;color:var(--ink-faint);margin-top:18px}
+
+  /* 11 competitive table */
+  .ctable{width:100%;border-collapse:collapse;margin-top:26px}
+  .ctable th,.ctable td{text-align:left;padding:19px 22px;border-bottom:1px solid var(--line);font-size:18px}
+  .ctable thead th{font-family:'Montserrat';font-weight:700;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-faint);border-bottom:1.5px solid var(--ink)}
+  .ctable thead th.hh{color:var(--gold-deep)}
+  .ctable td.row{font-family:'Montserrat';font-weight:600;color:var(--ink)}
+  .ctable td{color:var(--ink-soft)}
+  .ctable td.yes{color:var(--gold-deep);font-weight:700;font-family:'Belleza',serif;font-style:italic;font-size:21px}
+  .ctable .hhcol{background:rgba(122,139,67,.08);border-left:1px solid var(--gold);border-right:1px solid var(--gold)}
+  .ctable thead .hhcol{border-top:1px solid var(--gold)}
+  .ctable tbody tr:last-child .hhcol{border-bottom:1px solid var(--gold)}
+  .ctable .x{color:var(--ink-faint)}
+  /* competitive: funded-comp appetite band */
+  .comps{margin-top:26px;display:flex;flex-direction:column;gap:16px}
+  .comps .clbl{font-family:'Montserrat';font-size:13px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-deep)}
+  .comps .crow{display:flex;gap:13px;flex-wrap:wrap}
+  .comps .crow span{font-family:'Montserrat';font-size:15.5px;color:var(--ink);padding:10px 18px;border:1px solid var(--line);border-radius:30px;background:#fdfdf6}
+  .comps .crow span b{font-family:'Belleza',serif;font-style:italic;color:var(--gold-deep);font-weight:500;margin-right:5px}
+  .comps .wedge{display:flex;align-items:center;gap:20px;margin-top:4px}
+  .comps .wedge .gold-rule{width:90px;flex-shrink:0}
+  .comps .wedge p{font-family:'Belleza',serif;font-style:italic;font-size:21px;color:var(--ink);line-height:1.4}
+  .comps .wedge p b{font-style:normal;color:var(--gold-deep);font-weight:500}
+
+  /* 12 revenue chart */
+  .rev{display:grid;grid-template-columns:1.5fr 1fr;gap:60px;margin-top:30px;flex:1;align-items:center}
+  .chart{display:flex;align-items:flex-end;gap:34px;height:520px;border-bottom:1.5px solid var(--line);padding-bottom:0}
+  .chart .col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .chart .barwrap{position:relative;width:100%;max-width:120px;height:100%;display:flex;align-items:flex-end;justify-content:center}
+  .chart .ghost{position:absolute;left:0;bottom:0;width:100%;border:1.6px dashed var(--gold);border-bottom:none;border-radius:8px 8px 0 0;background:rgba(122,139,67,.06)}
+  .chart .ghost .gval{position:absolute;top:-24px;left:50%;transform:translateX(-50%);font-family:'Belleza',serif;font-size:17px;color:var(--ink-faint);white-space:nowrap}
+  .chart .stack{position:relative;z-index:1;width:100%;display:flex;flex-direction:column;transition:height .8s cubic-bezier(.2,.7,.2,1)}
+  .chart .seg{width:100%;flex-basis:0}
+  .chart .seg.away{background:linear-gradient(180deg,var(--gold-light),var(--gold-deep));border-radius:8px 8px 0 0}
+  .chart .seg.clinic{background:var(--olive)}
+  .chart .stack .val{position:absolute;top:-36px;left:50%;transform:translateX(-50%);font-family:'Belleza',serif;font-size:27px;color:var(--gold-deep);white-space:nowrap}
+  .chart .yr{margin-top:18px;font-family:'Montserrat';font-size:16px;font-weight:600;letter-spacing:0.04em;color:var(--ink-soft)}
+  .rev-side .lead{font-size:30px;margin-bottom:28px}
+  .rev-side p.body{font-size:19px}
+  .rev-legend{margin-top:30px;display:flex;flex-direction:column;gap:14px}
+  .rev-legend div{display:flex;align-items:center;gap:14px;font-family:'Montserrat';font-size:16px;color:var(--ink-soft)}
+  .rev-legend .sw{width:26px;height:14px;border-radius:4px}
+
+  /* 13 use of funds */
+  .uof{display:grid;grid-template-columns:1.35fr 1fr;gap:56px;margin-top:30px;flex:1;align-items:center}
+  .uof-rows{display:flex;flex-direction:column;gap:0}
+  .uof-row{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+  .uof-row:last-child{border-bottom:none}
+  .uof-row .label{font-family:'Montserrat';font-size:18.5px;font-weight:600;color:var(--ink)}
+  .uof-row .amt{font-family:'Belleza',serif;font-size:26px;color:var(--gold-deep);text-align:right;white-space:nowrap}
+  .uof-row .amt small{font-family:'Montserrat';font-size:14px;font-weight:600;color:var(--ink-faint);margin-left:12px}
+  .uof-row .barwrap{grid-column:1 / -1;height:7px;border-radius:4px;background:var(--line-soft);overflow:hidden;margin-top:12px}
+  .uof-row .barwrap i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--gold-light),var(--gold-deep))}
+  .uof .donut{display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .uof .donut .total{font-family:'Belleza',serif;font-size:124px;line-height:.9;color:var(--ink);letter-spacing:-0.02em}
+  .uof .donut .tl{font-family:'Montserrat';font-size:15px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-deep);margin-top:8px}
+  .uof .donut .note{font-family:'Belleza',serif;font-style:italic;font-size:21px;color:var(--ink-soft);text-align:center;margin-top:34px;max-width:340px;line-height:1.45}
+
+  /* 14 roadmap */
+  .road{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:42px;align-items:stretch}
+  .road .stage{padding:0 30px;border-right:1px solid var(--line);display:flex;flex-direction:column;position:relative}
+  .road .stage:first-child{padding-left:0}
+  .road .stage:last-child{border-right:none;padding-right:0}
+  .road .stage .dot{width:14px;height:14px;border-radius:50%;background:var(--cream);border:2px solid var(--gold);margin-bottom:22px}
+  .road .stage:nth-child(n+3) .dot{background:var(--gold)}
+  .road .stage:last-child .dot{background:var(--olive);border-color:var(--olive)}
+  .road .stage .nm{font-family:'Belleza',serif;font-size:28px;margin-bottom:14px}
+  .road .stage .raise{font-family:'Belleza',serif;font-size:42px;color:var(--gold-deep);line-height:.95}
+  .road .stage .post{font-family:'Montserrat';font-size:14.5px;font-weight:600;color:var(--ink-faint);margin:8px 0 18px}
+  .road .stage .loc{font-family:'Montserrat';font-size:15px;font-weight:700;color:var(--ink);padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:16px}
+  .road .stage .ms{font-size:15px;line-height:1.45;color:var(--ink-soft)}
+  .road-rail{position:relative;margin-top:30px;height:2px;background:var(--line)}
+  .road-foot{margin-top:30px;display:flex;align-items:center;gap:22px}
+  .road-foot .gold-rule{width:90px;flex-shrink:0}
+  .road-foot p{font-family:'Belleza',serif;font-style:italic;font-size:23px;color:var(--ink);line-height:1.4}
+  .road-foot p b{font-style:normal;color:var(--gold-deep);font-weight:500}
+
+  /* 15 the ask (espresso) */
+  .s-ask .pad{justify-content:center}
+  .s-ask .big{font-family:'Belleza',serif;font-weight:400;font-size:92px;line-height:1.02;color:var(--bone);max-width:1180px;margin-bottom:54px}
+  .s-ask .big i{font-style:italic;color:var(--gold-light)}
+  .ask-terms{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-cream);border:1px solid var(--line-cream);border-radius:18px;overflow:hidden}
+  .ask-terms > div{background:var(--espresso);padding:34px 36px}
+  .ask-terms .k{font-family:'Montserrat';font-size:13px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-light);margin-bottom:14px}
+  .ask-terms .v{font-family:'Belleza',serif;font-size:30px;color:var(--bone);line-height:1.12}
+  .ask-close{margin-top:36px;display:flex;align-items:center;gap:22px}
+  .ask-close .gold-rule{width:90px;flex-shrink:0;background:linear-gradient(90deg,var(--gold-light),transparent)}
+  .ask-close p{font-family:'Belleza',serif;font-style:italic;font-size:23px;color:rgba(246,241,232,.9);line-height:1.4}
+  .ask-close p b{font-style:normal;color:var(--gold-light);font-weight:500}
+
+  /* 16 team */
+  .team{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:42px}
+  .team .person{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:42px 38px;display:flex;flex-direction:column}
+  .team .ava{width:84px;height:84px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;
+    font-family:'Belleza',serif;font-size:32px;color:var(--gold-deep);margin-bottom:28px}
+  .team .nm{font-family:'Belleza',serif;font-size:34px;margin-bottom:6px}
+  .team .role{font-family:'Montserrat';font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:22px}
+  .team .bio{font-size:17px;line-height:1.5;color:var(--ink-soft)}
+  .team .person.tba{border-style:dashed;background:#fdfdf6}
+  .team .person.tba .ava{border-style:dashed;border-color:var(--sand-deep)}
+  .team .person.tba .nm{min-height:34px}
+  .team .person.tba .bio{color:var(--ink-faint);font-style:italic;font-family:'Belleza',serif;font-size:19px}
+  .partners{margin-top:28px;display:flex;align-items:center;gap:22px}
+  .partners .gold-rule{width:90px;flex-shrink:0}
+  .partners p{font-family:'Montserrat';font-size:18px;color:var(--ink-soft);line-height:1.5}
+  .partners p b{color:var(--ink);font-weight:700}
+
+  /* 17 closing */
+  .s-close{background:var(--espresso)}
+  .s-close .photo{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;
+    background-image:url('assets/vif-deck/atrium.jpg');opacity:.5}
+  .s-close .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(28,22,14,.78),rgba(28,22,14,.62) 50%,rgba(28,22,14,.92))}
+  /* photographic backdrops on the platform + ask slides */
+  .s-collphoto .photo,.s-ask .photo{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center}
+  .s-collphoto .photo{background-image:url('assets/vif-deck/photos/digital-twin.jpg')}
+  .s-ask .photo{background-image:url('assets/vif-deck/photos/sanctuary-lobby.jpg');background-position:center 30%}
+  .s-collphoto .scrim,.s-ask .scrim{position:absolute;inset:0;z-index:1}
+  .s-collphoto .scrim{background:linear-gradient(180deg,rgba(58,67,32,.90),rgba(58,67,32,.82) 46%,rgba(40,46,20,.94))}
+  .s-ask .scrim{background:linear-gradient(180deg,rgba(28,22,14,.90),rgba(28,22,14,.80) 46%,rgba(28,22,14,.95))}
+  .s-close .pad{justify-content:center;align-items:flex-start}
+  .s-close .eyebrow{margin-bottom:30px}
+  .s-close h1{font-family:'Belleza',serif;font-weight:400;font-size:108px;line-height:1.0;color:var(--bone);letter-spacing:-0.012em;max-width:1300px}
+  .s-close h1 i{font-style:italic;color:var(--gold-light)}
+  .s-close .arc{margin-top:40px;font-family:'Belleza',serif;font-style:italic;font-size:30px;color:rgba(246,241,232,.84);max-width:1100px;line-height:1.45}
+  .s-close .foot{position:absolute;left:104px;right:104px;bottom:64px;z-index:5;display:flex;justify-content:space-between;align-items:flex-end}
+  .s-close .foot .promise{font-family:'Belleza',serif;font-style:italic;font-size:24px;color:var(--gold-light)}
+  .s-close .foot .contact{font-family:'Montserrat';font-size:15px;font-weight:600;letter-spacing:0.06em;color:rgba(246,241,232,.7);text-align:right;line-height:1.7}
+  .s-close .foot .contact b{color:var(--bone)}
+
+  /* unit economics */
+  .uecon{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:38px}
+  .uecon > div{background:var(--cream);padding:38px 28px;display:flex;flex-direction:column}
+  .uecon .lab{font-family:'Montserrat';font-size:13px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:16px}
+  .uecon .v{font-family:'Belleza',serif;font-size:50px;line-height:.92;color:var(--ink);letter-spacing:-0.01em}
+  .uecon .v small{font-size:24px;color:var(--ink-soft)}
+  .uecon .sub{font-size:15px;color:var(--ink-soft);line-height:1.45;margin-top:20px}
+  .uecon-result{margin-top:24px;background:var(--olive);color:var(--bone);border-radius:18px;padding:36px 46px;display:flex;align-items:center;gap:44px}
+  .uecon-result .big{font-family:'Belleza',serif;font-size:42px;line-height:1.08;color:var(--gold-light);min-width:340px}
+  .uecon-result .big b{color:var(--bone);font-weight:500}
+  .uecon-result p{font-size:18px;line-height:1.55;color:rgba(246,241,232,.84)}
+  .uecon-result p strong{color:var(--bone);font-weight:600}
+
+  /* executive summary */
+  .exec{display:grid;grid-template-columns:0.82fr 1.18fr;gap:60px;margin-top:30px;flex:1;align-items:center}
+  .exec-lead .big{font-family:'Belleza',serif;font-weight:400;font-size:60px;line-height:1.0;letter-spacing:-0.01em}
+  .exec-lead .big i{font-style:italic;color:var(--gold-deep)}
+  .exec-lead p{font-family:'Belleza',serif;font-style:italic;font-size:23px;color:var(--ink-soft);line-height:1.4;margin-top:24px;max-width:420px}
+  .exec-list{display:flex;flex-direction:column}
+  .exec-list .row{display:grid;grid-template-columns:150px 1fr;gap:28px;padding:19px 0;border-top:1px solid var(--line);align-items:baseline}
+  .exec-list .row:first-child{border-top:none}
+  .exec-list .rk{font-family:'Montserrat';font-size:13px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-deep)}
+  .exec-list .rv{font-size:18px;line-height:1.5;color:var(--ink-soft)}
+  .exec-list .rv b{color:var(--ink);font-weight:700}
+
+  /* problem 5-up + new HealConnect slides */
+  .grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:auto}
+  .grid5 .card{padding:30px 26px}
+  .grid5 .card .ci{margin-bottom:16px}
+  .grid5 .card h3{font-size:23px;margin-bottom:10px}
+  .grid5 .card p{font-size:15px;line-height:1.46}
+  .grid5 .card .p-stat{font-size:21px}
+  .plug-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;gap:16px;margin-top:34px}
+  .plug-card{background:#fdfdf6;border:1px solid var(--line);border-radius:16px;padding:26px 26px;display:flex;flex-direction:column}
+  .plug-card .pl{font-family:'Montserrat';font-size:12.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px}
+  .plug-card p{font-size:16px;line-height:1.5;color:var(--ink-soft)}
+  .plug-card p i{font-style:italic;color:var(--ink-faint);font-family:'Lora',serif}
+
+  h1 i,h2 i,h3 i,.display i,.display em,.hero h1 i{font-family:'Lora',serif;font-style:italic;}
+</style>
+</head>
+<body>
+<deck-stage width="1920" height="1080" no-rail>
+  <!-- ============ 01 COVER ============ -->
+  <section class="slide s-cover" data-label="Cover">
+    <div class="photo"></div>
+    <div class="scrim"></div>
+    <div class="pad">
+      <img class="logo anim" src="assets/vif-deck/logo-vector-cream.svg" alt="Virtue Impact Fund">
+      <div class="center">
+        <div class="eyebrow anim2">Virtue Impact Fund · By Offering Memorandum</div>
+        <h1 class="anim2" style="margin-top:24px">Own the ground<br><i>wellness is built on.</i></h1>
+        <div class="tag anim3">Purpose Driven · Lasting Impact.</div>
+        <div class="meta anim4">
+          <div><div class="k">Target size</div><div class="v">~$50M open-ended trust</div></div>
+          <div><div class="k">Units</div><div class="v">$10.00 then NAV</div></div>
+          <div><div class="k">Minimum</div><div class="v">$10,000 subscription</div></div>
+        </div>
+        <div class="foot anim4">
+          <span>Ontario, Canada · Formed 3 Feb 2023</span>
+          <span>Confidential · Not an offer of securities · Offering Memorandum governs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 THE OPPORTUNITY ============ -->
+  <section class="slide" data-label="The Opportunity">
+    <div class="pad">
+      <div class="head anim">
+        <div class="num">01</div>
+        <div class="htxt">
+          <div class="eyebrow">The Opportunity</div>
+          <h2 class="display">The fastest-compounding <i>corner of property.</i></h2>
+        </div>
+      </div>
+      <div class="uecon stg">
+        <div><div class="lab">Wellness RE · 2024</div><div class="v">$548B</div><div class="sub">Global wellness real estate today, scaling to ~$1.1T by 2029 (GWI). Illustrative market data.</div></div>
+        <div><div class="lab">Growth</div><div class="v">19.5<small>%/yr</small></div><div class="sub">Compound growth of the wellness real-estate market through 2029 (GWI).</div></div>
+        <div><div class="lab">Residential premium</div><div class="v">10–25<small>%</small></div><div class="sub">Wellness residential price premium; branded residences up to 33% (Savills).</div></div>
+        <div><div class="lab">Commercial rent</div><div class="v">4.4–7.7<small>%</small></div><div class="sub">Wellness commercial rental premium versus conventional space (MIT).</div></div>
+        <div><div class="lab">#1 home driver</div><div class="v">60<small>%</small></div><div class="sub">of consumers rank health/wellness their top home-feature driver (Kantar 2025).</div></div>
+      </div>
+      <div class="uecon-result anim4">
+        <div class="big"><b>+23.3M sq ft</b><br>absorbed</div>
+        <p>Wellness-rich buildings absorbed <strong>+23.3M sq ft</strong> while other Class-A lost −50M sq ft — wellness is a value driver, not an amenity. <strong>All figures illustrative and market-wide; verify at diligence.</strong> Sources: GWI, Savills, MIT, Kantar.</p>
+      </div>
+    </div>
+    <div class="chrome bot"><div class="mk"><img src="assets/vif-deck/logo-mark-vector.svg" alt=""><span>Virtue Impact Fund · Confidential</span></div><div class="idx"><span>02</span> / 20</div></div>
+  </section>
+
+  <!-- ============ 03 WHY NOW ============ -->
+  <section class="slide parch" data-label="Why Now">
+    <div class="pad">
+      <div class="head anim">
+        <div class="num">02</div>
+        <div class="htxt">
+          <div class="eyebrow">Why Now</div>
+          <h2 class="display">Housing crisis, federal capital &amp; a <i>wellness premium — at once.</i></h2>
+        </div>
+      </div>
+      <div class="sol-grid stg">
+        <div class="card"><div class="ci">1</div><h3 class="display">Housing shortage</h3><p>Structural undersupply across the GTA and Ontario drives sustained demand for new homes.</p></div>
+        <div class="card"><div class="ci">2</div><h3 class="display">Federal grant capital</h3><p>Build Canada Homes offers a <b>40% non-repayable federal grant</b> toward eligible development.</p></div>
+        <div class="card"><div class="ci">3</div><h3 class="display">Cheap, patient debt</h3><p>CMHC MLI Select provides favourable insured financing for purpose-built rental and affordable housing.</p></div>
+        <div class="card"><div class="ci">4</div><h3 class="display">Wellness premium</h3><p>The same buildings can capture the 10–25% wellness uplift on top of the stack.</p></div>
+      </div>
+      <div class="note-line anim4">
+        <div class="gold-rule"></div>
+        <p>The window: <b>policy support and wellness demand are converging now.</b> BCH grant and CMHC MLI Select terms are program-governed, subject to approval, and not commitments.</p>
+      </div>
+    </div>
+    <div class="chrome bot"><div class="mk"><img src="assets/vif-deck/logo-mark-vector.svg" alt=""><span>Virtue Impact Fund · Confidential</span></div><div class="idx"><span>03</span> / 20</div></div>
+  </section>
+
+  <!-- ============ 04 THE FUND / THE VEHICLE ============ -->
+  <section class="slide parch" data-label="The Fund">
+    <div class="pad">
+      <div class="exec">
+        <div class="exec-lead anim">
+          <div class="eyebrow" style="margin-bottom:18px">The Vehicle</div>
+          <div class="big">An open-ended <i>mutual-fund trust.</i></div>
+          <p>A professionally governed fund built for ongoing subscription and quarterly liquidity — a fund structure, not a single-asset syndication.</p>
+        </div>
+        <div class="exec-list anim2">
+          <div class="row"><div class="rk">Structure</div><div class="rv">Open-ended <b>private mutual-fund trust;</b> formed <b>3 February 2023.</b></div></div>
+          <div class="row"><div class="rk">Target size</div><div class="rv">~<b>$50M;</b> initial closings until <b>$10–15M</b> gross.</div></div>
+          <div class="row"><div class="rk">Units</div><div class="rv"><b>$10.00/unit</b> initially, then at <b>NAV;</b> $10,000 minimum subscription.</div></div>
+          <div class="row"><div class="rk">Series</div><div class="rv"><b>Series A</b> (with trailer) and <b>Series F</b> (no trailer) available.</div></div>
+          <div class="row"><div class="rk">Liquidity</div><div class="rv"><b>Quarterly redemption</b> on 45-day notice; early-redemption penalty before 18 months.</div></div>
+          <div class="row"><div class="rk">Governing</div><div class="rv">The <b>Offering Memorandum</b> and Declaration of Trust govern; NAV struck per the fund's valuation policy.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="chrome bot"><div class="mk"><img src="assets/vif-deck/logo-mark-vector.svg" alt=""><span>Virtue Impact Fund · Confidential</span></div><div class="idx"><span>04</span> / 20</div></div>
+  </section>
+
+  <!-- ============ 05 THREE-PILLAR PLATFORM ============ -->
+  <section class="slide olive" data-label="Three-Pillar Platform">
+    <div class="pad">
+      <div class="head anim">
+        <div class="num">03</div>
+        <div class="htxt">
+          <div class="eyebrow">The Platform</div>
+          <h2 class="display">Capital × Development × Operations — <i>one aligned ecosystem.</i></h2>
+        </div>
+      </div>
+      <p class="body anim2" style="max-width:1340px;margin-top:14px">Three specialized pillars are integrated and aligned around the same assets, so value created at each stage compounds instead of leaking to third parties. <strong>Alignment means the wellness premium and operating margin accrue to the platform, not outside vendors.</strong></p>
+      <div class="away-grid stg">
+        <div class="away-card"><div class="n">Ⅰ</div><h3>Virtue — Capital</h3><p>The fund. Raises and deploys patient equity into sustainable health-and-wellness real estate.</p><span class="badge">Capital</span></div>
+        <div class="away-card"><div class="n">Ⅱ</div><h3>Aevum — Development</h3><p>Aevum Developments designs and builds the assets — in-house development execution.</p><span class="badge">Development</span></div>
+        <div class="away-card"><div class="n">Ⅲ</div><h3>Heal — Operations</h3><p>Operates the wellness real estate and generates income; VIF owns the property, Heal runs the experience.</p><span class="badge">Operations</span></div>
+      </div>
+      <div class="away-foot anim4">
+        <div class="gold-rule"></div>
+        <p>Each pillar a specialist; together they <b>close the loop from dollar to door to durable NOI.</b> Related-party relationships are disclosed and governed (see Governance).</p>
+      </div>
+    </div>
+    <div class="chrome bot"><div class="mk"><img src="assets/vif-deck/logo-mark-vector.svg" alt=""><span>Virtue Impact Fund · Confidential</span></div><div class="idx"><span>05</span> / 20</div></div>
+  </section>
+
+  <!-- ============ 06 HEAL AS THE OPERATING LAYER ============ -->
+  <section class="slide" data-label="Heal Operating Layer">
+    <div class="pad">
+      <div class="head anim">
+        <div class="num">04</div>
+        <div class="htxt">
+          <div class="eyebrow">The Operating Layer</div>
+          <h2 class="display">Wellness real estate outperforms — <i>when it's actually operated.</i></h2>
+        </div>
+      </div>
+      <div class="tech-wrap">
+        <div class="tech-lead anim2">
+          <p><strong>Wellness premiums only materialize when a credible operator delivers the experience.</strong> Heal House is the live, branded operating layer — a flagship wellness clinic in King City with a real service catalogue and memberships, plus additional Ontario locations.</p>
+          <p>The fund owns the real estate; <strong>Heal is the tenant/operating partner</strong> under arm's-length arrangements. Operated wellness turns amenity space from a cost centre into an income and premium driver — and a branded operator de-risks lease-up and stabilizes NOI.</p>
+          <span class="pill">VIF owns the bricks · Heal operates the experience</span>
+        </div>
+        <div class="tech-grid anim3">
+          <div><div class="k display">Absorption</div><p>Embedded wellness operations pull lease-up forward and lift occupancy.</p></div>
+          <div><div class="k display">Revenue <i>premium</i></div><p>Major-wellness hotels earn <strong>+108% TRevPAR</strong> vs no-wellness peers; $561 vs $335 per occupied room vs minor-wellness (RLA / HotStats 2025).</p></div>
+          <div><div class="k display">Retention</div><p>Membership and measurable outcomes drive resident stickiness.</p></div>
+          <div><div class="k display">De-risked <i>NOI</i></div><p>A branded operator stabilizes income; assets can be re-tenanted if needed.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="chrome bot"><div class="mk"><img src="assets/vif-deck/logo-mark-vector.svg" alt=""><span>Virtue Impact Fund · Confidential</span></div><div class="idx"><span>06</span> / 20</div></div>
+  </section>
+
+  <!-- ============ 07 THE BUILD CANADA HOMES MECHANIC ============ -->
+  <section class="slide parch" data-label="BCH Mechanic">
+    <div class="pad">
+      <div class="head anim">
+        <div class="num">05</div>
+        <div class="htxt">
+          <div class="eyebrow">The Capital Stack</div>
+          <h2 class="display">Land, a 40% grant, insured debt — <i>the mechanic.</i></h2>
+        </div>
+      </div>
+      <p class="lead sol-intro anim2">The fund contributes land, stacks a <i>40% non-repayable federal BCH grant</i> and CMHC MLI Select insured financing — so the fund's own equity per project is small relative to the asset created.</p>
+      <div class="uecon stg">
+        <div><div class="lab">Development unlocked</div><div class="v">~$400M<small>+</small></div><div class="sub">Illustrative platform-wide development value across the pipeline.</div></div>
+        <div><div class="lab">Federal grants</div><div class="v">~$120M<small>+</small></div><div class="sub">Non-repayable BCH grant capital directed into eligible development.</div></div>
+        <div><div class="lab">Homes</div><div class="v">~590</div><div class="sub">Homes unlocked platform-wide, plus the 8440 flagship.</div></div>
+        <div><div class="lab">Permanently affordable</div><div class="v">~175<small>+</small></div><div class="sub">Permanently affordable homes — the commitment that earns the grant.</div></div>
+        <div><div class="lab">Dev-to-equity</div><div class="v">~8<small>×</small></div><div class="sub">Asset value created per dollar of fund equity — a structural ratio, not a return.</div></div>
+      </div>
+      <div class="uecon-result anim4">
+        <div class="big"><b>Year-20 buyout</b><br>60% cash-flow share</div>
+        <p>A structural illustration of how the capital stack works — <strong>not a return projection.</strong> All figures illustrative and pre-diligence; grant and mortgage eligibility are subject to program rules and approval and are not commitments.</p>
+      </div>
+    </div>
+    <div class="chrome bot"><div class="mk"><img src="assets/vif-deck/logo-mark-vector.svg" alt=""><span>Virtue Impact Fund · Confidential</span></div><div class="idx"><span>07</span> / 20</div></div>
+  </section>
+
+  <!-- ============ 08 THE FLYWHEEL ============ -->
+  <section class="slide parch" data-label="The Flywheel">
+    <div class="pad">
+      <div class="head anim">
+        <div class="num">06</div>
+        <div class="htxt">
+          <div class="eyebrow">The Flywheel</div>
+          <h2 class="display">Capital that <i>recycles.</i></h2>
+        </div>
+      </div>
+      <div class="flow anim2" style="grid-template-columns:1fr auto 1fr auto 1fr auto 1fr auto 1fr">
+        <div class="step"><div class="n">01</div><h3 class="display">Virtue funds</h3><p>Equity plus BCH grant plus CMHC MLI Select insured debt.</p></div>
+        <div class="arrow">›</div>
+        <div class="step"><div class="n">02</div><h3 class="display">Aevum builds</h3><p>Development execution turns capital into assets.</p></div>
+        <div class="arrow">›</div>
+        <div class="step"><div class="n">03</div><h3 class="display">Heal operates</h3><p>Wellness operations generate income and the premium.</p></div>
+        <div class="arrow">›</div>
+        <div class="step"><div class="n">04</div><h3 class="display">Refinance / sale</h3><p>Returns capital to the fund.</p></div>
+        <div class="arrow">›</div>
+        <div class="step"><div class="n">05</div><h3 class="display">Redeploy</h3><p>Capital recycles into the next project; NAV compounds.</p></div>
+      </div>
+      <div class="note-line anim3">
+        <div class="gold-rule"></div>
+        <p>The open-ended structure lets each turn <b>compound NAV rather than require a full new raise.</b> Illustrative process; timing, refinancing and sale outcomes are not guaranteed.</p>
+      </div>
+    </div>
+    <div class="chrome bot"><div class="mk"><img src="assets/vif-deck/logo-mark-vector.svg" alt=""><span>Virtue Impact Fund · Confidential</span></div><div class="idx"><span>08</span> / 20</div></div>
+  </section>
+
+  <!-- ============ 09 PORTFOLIO PIPELINE ============ -->
+  <section class="slide" data-label="Portfolio Pipeline">
+    <div class="pad">
+      <div class="head anim">
+        <div class="num">07</div>
+        <div class="htxt">
+          <div class="eyebrow">Portfolio Pipeline</div>
+          <h2 class="display">A diversified, real pipeline <i>across Ontario.</i></h2>
+        </div>
+      </div>
+      <table class="ctable anim2">
+        <thead>
+          <tr><th class="hh hhcol">Project</th><th>Location</th><th>Type</th><th>Homes / Keys</th><th>Status</th><th>Illustrative fund slice</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="row hhcol">8440 Highway 27</td><td>Vaughan</td><td>Hospitality + Heal Living</td><td>254 keys (185 redesigned)</td><td class="yes">Flagship · in negotiation</td><td>~$30M</td></tr>
+          <tr><td class="row hhcol">Lakeshore</td><td>Ontario</td><td>Retirement + rental + hospitality</td><td>254</td><td>Owned</td><td>~$5.5M</td></tr>
+          <tr><td class="row hhcol">Keele Street</td><td>King City</td><td>Rental</td><td>105</td><td>Modeled</td><td>~$5.0M</td></tr>
+          <tr><td class="row hhcol">584 Oakwood</td><td>Toronto</td><td>Retirement + Heal House</td><td>51</td><td>Modeled</td><td>~$3.0M</td></tr>
+          <tr><td class="row hhcol">27 Blake Street</td><td>Barrie</td><td>Rental</td><td>50</td><td>Approved</td><td>~$1.8M</td></tr>
+          <tr><td class="row hhcol">Listowel</td><td>Ontario</td><td>Retirement (proof asset)</td><td>48</td><td>First build</td><td>~$1.0M</td></tr>
+          <tr><td class="row hhcol">286 Ardagh Road</td><td>Barrie</td><td>Rental (two 6-storey)</td><td>~80</td><td>Concept</td><td>~$2.0M</td></tr>
+          <tr><td class="row hhcol">6700 Highway 7</td><td>Vaughan</td><td>Rental + Heal Living + Heal House</td><td>720</td><td>Concept (upside)</td><td>separate</td></tr>
+        </tbody>
+      </table>
+      <div class="src anim3">Pipeline is illustrative and pre-diligence; status labels reflect current stage; inclusion is not a commitment. Fund slices are indicative allocations, not confirmed deployments.</div>
+    </div>
+    <div class="chrome bot"><div class="mk"><img src="assets/vif-deck/logo-mark-vector.svg" alt=""><span>Virtue Impact Fund · Confidential</span></div><div class="idx"><span>09</span> / 20</div></div>
+  </section>
+
+  <!-- ============ 10 FLAGSHIP: 8440 HIGHWAY 27 ============ -->
+  <section class="slide parch" data-label="Flagship 8440">
+    <div class="pad">
+      <div class="exec">
+        <div class="exec-lead anim">
+          <div class="eyebrow" style="margin-bottom:18px">The Flagship</div>
+          <div class="big">8440 <i>Highway 27.</i></div>
+          <p>Hospitality and Heal Living wrapped around a large purpose-built wellness environment — the platform thesis at scale, in Vaughan.</p>
+        </div>
+        <div class="exec-list anim2">
+          <div class="row"><div class="rk">Location</div><div class="rv"><b>Vaughan, GTA</b> — high-demand, high-growth corridor.</div></div>
+          <div class="row"><div class="rk">Program</div><div class="rv">Hospitality + Heal Living, with <b>~55,000 sq ft</b> of Heal wellness space.</div></div>
+          <div class="row"><div class="rk">Scale</div><div class="rv"><b>254 keys</b> (or 185 keys in the redesigned concept).</div></div>
+          <div class="row"><div class="rk">Wellness uplift</div><div class="rv">Major-wellness hotels earn <b>+108% TRevPAR</b> vs no-wellness peers; $561 vs $335 per occupied room vs minor-wellness (RLA / HotStats 2025) — the thesis, measured.</div></div>
+          <div class="row"><div class="rk">Project cost</div><div class="rv">~<b>$228M</b> total (185-key redesign concept; illustrative, pre-diligence).</div></div>
+          <div class="row"><div class="rk">Fund slice</div><div class="rv">~<b>$30M</b> indicative equity allocation — balance via the grant-plus-insured-debt stack.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="chrome bot"><div class="mk"><img src="assets/vif-deck/logo-mark-vector.svg" alt=""><span>Virtue Impact Fund · Confidential</span></div><div class="idx"><span>10</span> / 20</div></div>
+  </section>
+
+  <!-- ============ 11 FUND ECONOMICS & TERMS ============ -->
+  <section class="slide" data-label="Fund Economics & Terms">
+    <div class="pad">
+      <div class="head anim">
+        <div class="num">08</div>
+        <div class="htxt">
+          <div class="eyebrow">Economics &amp; Terms</div>
+          <h2 class="display">Fees, preferred return &amp; <i>the waterfall.</i></h2>
+        </div>
+      </div>
+      <div class="ask-terms anim2" style="grid-template-columns:repeat(3,1fr)">
+        <div><div class="k">Management fee</div><div class="v">2% per annum</div></div>
+        <div><div class="k">Trailer</div><div class="v">1% (Series A) · none (Series F)</div></div>
+        <div><div class="k">Preferred return</div><div class="v">5% to investors</div></div>
+        <div><div class="k">Carry</div><div class="v">20% above the high-water mark</div></div>
+        <div><div class="k">Split</div><div class="v">80 / 20 above the high-water mark</div></div>
+        <div><div class="k">Early redemption</div><div class="v">5% penalty if within 18 months</div></div>
+      </div>
+      <div class="note-line anim3">
+        <div class="gold-rule"></div>
+        <p>Investors receive the <b>preferred return first;</b> the manager earns carry only on sustained NAV growth above the high-water mark. All terms per the <b>Offering Memorandum,</b> which governs and prevails.</p>
+      </div>
+    </div>
+    <div class="chrome bot"><div class="mk"><img src="assets/vif-deck/logo-mark-vector.svg" alt=""><span>Virtue Impact Fund · Confidential</span></div><div class="idx"><span>11</span> / 20</div></div>
+  </section>
+
+  <!-- ============ 12 INVESTOR RETURNS FRAMING (STRUCTURAL) ============ -->
+  <section class="slide parch" data-label="Returns Framing">
+    <div class="pad">
+      <div class="head anim">
+        <div class="num">09</div>
+        <div class="htxt">
+          <div class="eyebrow">How Value Is Intended to Accrue</div>
+          <h2 class="display">Four structural levers — <i>no projected return.</i></h2>
+        </div>
+      </div>
+      <div class="sol-grid stg">
+        <div class="card"><div class="ci">1</div><h3 class="display">Grant leverage</h3><p>Non-repayable grant lowers equity per project, amplifying equity efficiency.</p></div>
+        <div class="card"><div class="ci">2</div><h3 class="display">Operating NOI</h3><p>Heal-operated assets generate income — a 60% cash-flow share to the platform.</p></div>
+        <div class="card"><div class="ci">3</div><h3 class="display">Wellness premium</h3><p>Rent, absorption and resale uplift on purpose-built wellness real estate.</p></div>
+        <div class="card"><div class="ci">4</div><h3 class="display">Capital recycling</h3><p>The open-ended structure redeploys returned capital, compounding NAV.</p></div>
+      </div>
+      <div class="note-line anim4">
+        <div class="gold-rule"></div>
+        <p><b>Illustrative structure — not a projection.</b> We do not project or guarantee any IRR, distribution, or return. The Fund has no operating history; see the OM for risk factors.</p>
+      </div>
+    </div>
+    <div class="chrome bot"><div class="mk"><img src="assets/vif-deck/logo-mark-vector.svg" alt=""><span>Virtue Impact Fund · Confidential</span></div><div class="idx"><span>12</span> / 20</div></div>
+  </section>
+
+  <!-- ============ 13 IMPACT ============ -->
+  <section class="slide" data-label="Impact">
+    <div class="pad">
+      <div class="head anim">
+        <div class="num">10</div>
+        <div class="htxt">
+          <div class="eyebrow">Impact</div>
+          <h2 class="display">Real homes, permanently affordable — <i>measurable ESG.</i></h2>
+        </div>
+      </div>
+      <div class="trac-stats anim2">
+        <div><div class="v">~590</div><div class="k">Homes unlocked across the pipeline (plus the 8440 flagship)</div></div>
+        <div><div class="v sm">~175+</div><div class="k">Permanently affordable homes</div></div>
+        <div><div class="v sm">~$120M+</div><div class="k">Federal grant capital directed into Canadian housing supply</div></div>
+        <div><div class="v sm">ESG</div><div class="k">Sustainable, wellness-oriented buildings — health &amp; environmental co-benefits</div></div>
+      </div>
+      <div class="trac-why anim3">
+        <div class="lbl">Impact is<br>the engine</div>
+        <p>Impact is not a side effect: the <strong>permanently affordable homes are the consideration that earns the non-repayable federal grant,</strong> which in turn drives the fund's equity efficiency. Impact and returns pull in the same direction. Illustrative and platform-wide; affordability and grant eligibility are governed by program rules and approval.</p>
+      </div>
+    </div>
+    <div class="chrome bot"><div class="mk"><img src="assets/vif-deck/logo-mark-vector.svg" alt=""><span>Virtue Impact Fund · Confidential</span></div><div class="idx"><span>13</span> / 20</div></div>
+  </section>
+
+  <!-- ============ 14 TRACK RECORD ============ -->
+  <section class="slide parch" data-label="Track Record">
+    <div class="pad">
+      <div class="head anim">
+        <div class="num">11</div>
+        <div class="htxt">
+          <div class="eyebrow">Track Record</div>
+          <h2 class="display">Backed by proven capital-markets <i>experience.</i></h2>
+        </div>
+      </div>
+      <div class="mkt stg" style="align-items:stretch">
+        <div class="ring-stat"><div class="lab">Value created</div><div class="v">~$980M</div><p>Value created by advisor / promoter Safe Harbour Capital Partners Inc.</p></div>
+        <div class="ring-stat"><div class="lab">Investments</div><div class="v">18</div><p>Investments made across the advisor's capital-markets history.</p></div>
+        <div class="ring-stat"><div class="lab">Exited</div><div class="v">16</div><p>Successful exits — disciplined entry and exit, relevant to the fund's return-and-redeploy loop.</p></div>
+      </div>
+      <div class="mkt-note anim4">
+        <div class="gold-rule"></div>
+        <p>The track record belongs to the <b>advisor, not to VIF</b> — the Fund itself has no operating history. Past performance is not indicative of future results.</p>
+      </div>
+    </div>
+    <div class="chrome bot"><div class="mk"><img src="assets/vif-deck/logo-mark-vector.svg" alt=""><span>Virtue Impact Fund · Confidential</span></div><div class="idx"><span>14</span> / 20</div></div>
+  </section>
+
+  <!-- ============ 15 GOVERNANCE ============ -->
+  <section class="slide" data-label="Governance">
+    <div class="pad">
+      <div class="exec">
+        <div class="exec-lead anim">
+          <div class="eyebrow" style="margin-bottom:18px">Governance</div>
+          <div class="big">Institutional <i>oversight.</i></div>
+          <p>Independent, established service providers sit between investors and the platform's operating entities — the safeguard behind the aligned three-pillar model.</p>
+        </div>
+        <div class="exec-list anim2">
+          <div class="row"><div class="rk">Manager</div><div class="rv"><b>Qwest Investment Fund Management Ltd.</b></div></div>
+          <div class="row"><div class="rk">General Partner</div><div class="rv"><b>SFC Erottuva GP Ltd.</b></div></div>
+          <div class="row"><div class="rk">Trustee</div><div class="rv"><b>Odyssey Trust.</b></div></div>
+          <div class="row"><div class="rk">Advisor</div><div class="rv"><b>Safe Harbour Capital Partners Inc.</b> — advisor / promoter.</div></div>
+          <div class="row"><div class="rk">Related party</div><div class="rv">Alignment with <b>Heal &amp; Aevum</b> is disclosed and governed on arm's-length terms per the OM.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="chrome bot"><div class="mk"><img src="assets/vif-deck/logo-mark-vector.svg" alt=""><span>Virtue Impact Fund · Confidential</span></div><div class="idx"><span>15</span> / 20</div></div>
+  </section>
+
+  <!-- ============ 16 RISKS ============ -->
+  <section class="slide" data-label="Key Risks">
+    <div class="pad">
+      <div class="head anim">
+        <div class="num">12</div>
+        <div class="htxt">
+          <div class="eyebrow">Key Risks</div>
+          <h2 class="display">Read the <i>Offering Memorandum.</i></h2>
+        </div>
+      </div>
+      <div class="plug-grid stg">
+        <div class="plug-card"><div class="pl">No operating history</div><p>The fund is newly formed; all figures illustrative and pre-diligence.</p></div>
+        <div class="plug-card"><div class="pl">Program risk</div><p>BCH grant &amp; CMHC MLI Select eligibility and amounts are not guaranteed.</p></div>
+        <div class="plug-card"><div class="pl">Development &amp; execution</div><p>Construction cost, timing, entitlement and lease-up risk.</p></div>
+        <div class="plug-card"><div class="pl">Operator dependency</div><p>Reliance on Heal as wellness operator; related-party conflicts.</p></div>
+        <div class="plug-card"><div class="pl">Liquidity risk</div><p>Units are illiquid; redemption is periodic and may be gated.</p></div>
+        <div class="plug-card"><div class="pl">Market &amp; financing</div><p>Interest rates, real-estate values and refinancing conditions.</p></div>
+        <div class="plug-card"><div class="pl">No guaranteed return</div><p>Distributions, redemptions and NAV can fall as well as rise.</p></div>
+      </div>
+      <div class="note-line anim4">
+        <div class="gold-rule"></div>
+        <p>This is a summary only. <b>The Offering Memorandum's risk-factors section is the complete and governing statement.</b></p>
+      </div>
+    </div>
+    <div class="chrome bot"><div class="mk"><img src="assets/vif-deck/logo-mark-vector.svg" alt=""><span>Virtue Impact Fund · Confidential</span></div><div class="idx"><span>16</span> / 20</div></div>
+  </section>
+
+  <!-- ============ 17 USE OF CAPITAL / ALLOCATION ============ -->
+  <section class="slide parch" data-label="Use of Capital">
+    <div class="pad">
+      <div class="head anim">
+        <div class="num">13</div>
+        <div class="htxt">
+          <div class="eyebrow">Use of Capital</div>
+          <h2 class="display">Deployed across <i>the pipeline.</i></h2>
+        </div>
+      </div>
+      <div class="uof">
+        <div class="uof-rows anim2">
+          <div class="uof-row"><div class="label">8440 Highway 27 — flagship</div><div class="amt">~$30M<small>indicative</small></div><div class="barwrap"><i style="width:100%"></i></div></div>
+          <div class="uof-row"><div class="label">Lakeshore</div><div class="amt">~$5.5M</div><div class="barwrap"><i style="width:18%"></i></div></div>
+          <div class="uof-row"><div class="label">Keele Street</div><div class="amt">~$5.0M</div><div class="barwrap"><i style="width:17%"></i></div></div>
+          <div class="uof-row"><div class="label">584 Oakwood</div><div class="amt">~$3.0M</div><div class="barwrap"><i style="width:10%"></i></div></div>
+          <div class="uof-row"><div class="label">286 Ardagh Road</div><div class="amt">~$2.0M</div><div class="barwrap"><i style="width:7%"></i></div></div>
+          <div class="uof-row"><div class="label">27 Blake Street</div><div class="amt">~$1.8M</div><div class="barwrap"><i style="width:6%"></i></div></div>
+          <div class="uof-row"><div class="label">Listowel — proof asset</div><div class="amt">~$1.0M</div><div class="barwrap"><i style="width:4%"></i></div></div>
+        </div>
+        <div class="donut anim3">
+          <div class="total">~$50M</div>
+          <div class="tl">Target fund</div>
+          <div class="note">Fund equity shown; total project value is a multiple of this via grant + insured debt. Indicative and pre-diligence; deployment at the Manager's discretion per the OM.</div>
+        </div>
+      </div>
+    </div>
+    <div class="chrome bot"><div class="mk"><img src="assets/vif-deck/logo-mark-vector.svg" alt=""><span>Virtue Impact Fund · Confidential</span></div><div class="idx"><span>17</span> / 20</div></div>
+  </section>
+
+  <!-- ============ 18 SUBSCRIPTION MECHANICS ============ -->
+  <section class="slide parch" data-label="How to Invest">
+    <div class="pad">
+      <div class="head anim">
+        <div class="num">14</div>
+        <div class="htxt">
+          <div class="eyebrow">How to Invest</div>
+          <h2 class="display">Straightforward for <i>eligible investors.</i></h2>
+        </div>
+      </div>
+      <div class="flow anim2" style="grid-template-columns:1fr auto 1fr auto 1fr auto 1fr">
+        <div class="step"><div class="n">01</div><h3 class="display">Review the OM</h3><p>The Offering Memorandum and subscription agreement are the operative documents.</p></div>
+        <div class="arrow">›</div>
+        <div class="step"><div class="n">02</div><h3 class="display">Confirm eligibility</h3><p>Eligible investors only, per applicable exemptions and the OM, by jurisdiction.</p></div>
+        <div class="arrow">›</div>
+        <div class="step"><div class="n">03</div><h3 class="display">Subscribe</h3><p>Choose Series A (1% trailer) or Series F (no trailer); $10/unit then NAV, $10K minimum.</p></div>
+        <div class="arrow">›</div>
+        <div class="step"><div class="n">04</div><h3 class="display">Close</h3><p>Funds held/closed at each closing — initial closings until $10–15M gross.</p></div>
+      </div>
+      <div class="note-line anim3">
+        <div class="gold-rule"></div>
+        <p>Liquidity: <b>quarterly redemption on 45-day notice</b> (5% penalty if within 18 months). Eligibility criteria and exemptions apply by jurisdiction; the OM governs.</p>
+      </div>
+    </div>
+    <div class="chrome bot"><div class="mk"><img src="assets/vif-deck/logo-mark-vector.svg" alt=""><span>Virtue Impact Fund · Confidential</span></div><div class="idx"><span>18</span> / 20</div></div>
+  </section>
+
+  <!-- ============ 19 CLOSE ============ -->
+  <section class="slide s-close" data-label="Close">
+    <div class="photo"></div>
+    <div class="scrim"></div>
+    <div class="pad">
+      <div class="eyebrow anim">The Invitation</div>
+      <h1 class="anim2">Own the ground<br><i>wellness is built on.</i></h1>
+      <div class="arc anim3">An open-ended trust in the fastest-compounding corner of real estate: a grant-leveraged capital stack, an aligned three-pillar platform, a real pipeline, a real operator, and institutional governance. <b>Next step — request the Offering Memorandum and speak with the team.</b> This is not an offer of securities; the OM governs.</div>
+    </div>
+    <div class="chrome bot"><div class="mk"><img src="assets/vif-deck/logo-vector-cream.svg" alt=""><span>Virtue Impact Fund · Confidential</span></div><div class="idx"><span>19</span> / 20</div></div>
+  </section>
+
+  <!-- ============ 20 DISCLAIMER / IMPORTANT INFORMATION ============ -->
+  <section class="slide" data-label="Important Information">
+    <div class="pad">
+      <div class="head anim">
+        <div class="htxt">
+          <div class="eyebrow">Important Information</div>
+          <h2 class="display">The Offering Memorandum <i>governs.</i></h2>
+        </div>
+      </div>
+      <div class="exec-list anim2" style="margin-top:20px">
+        <div class="row"><div class="rk">Not an offer</div><div class="rv">This deck is <b>not an offer to sell or a solicitation to buy securities.</b> Units are offered only by Offering Memorandum to eligible investors in permitted jurisdictions.</div></div>
+        <div class="row"><div class="rk">OM governs</div><div class="rv">The <b>Offering Memorandum and Declaration of Trust prevail</b> over anything in this deck.</div></div>
+        <div class="row"><div class="rk">Illustrative</div><div class="rv">All figures are <b>illustrative and pre-diligence;</b> the Fund has <b>no operating history.</b></div></div>
+        <div class="row"><div class="rk">No guarantees</div><div class="rv">No return, distribution, redemption, or NAV outcome is projected or guaranteed; past performance of the advisor is not indicative of Fund results.</div></div>
+        <div class="row"><div class="rk">Programs</div><div class="rv">BCH grant and CMHC MLI Select amounts and eligibility are subject to program rules and approval and are <b>not commitments.</b></div></div>
+        <div class="row"><div class="rk">Separate vehicles</div><div class="rv"><b>VIF (real estate) is distinct from the Heal House OpCo pre-seed SAFE (venture)</b> — separate securities with separate risks.</div></div>
+        <div class="row"><div class="rk">Not advice</div><div class="rv">Nothing herein is investment, legal, or tax advice; consult your own advisors.</div></div>
+      </div>
+    </div>
+    <div class="chrome bot"><div class="mk"><img src="assets/vif-deck/logo-mark-vector.svg" alt=""><span>Virtue Impact Fund · Confidential</span></div><div class="idx"><span>20</span> / 20</div></div>
+  </section>
+</deck-stage>
+<script src="deck-stage.js"></script>
+<a href="materials.html" title="Back to all materials" style="position:fixed;top:14px;left:14px;z-index:2147483000;display:inline-flex;align-items:center;gap:6px;background:rgba(28,43,64,.85);color:#f6f1e8;font:600 12px/1 Montserrat,system-ui,sans-serif;padding:9px 14px;border-radius:20px;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.25)">&larr; All materials</a><div style="position:fixed;left:0;right:0;bottom:0;z-index:2147483000;background:rgba(28,28,28,.92);color:#cbd2d6;font:400 11px/1.45 Montserrat,sans-serif;letter-spacing:.01em;text-align:center;padding:6px 18px;pointer-events:none">Not an offer or solicitation. Any offering is made solely to qualified investors under prospectus exemptions (NI&nbsp;45-106) by the Offering Memorandum, which prevails. Forward-looking statements are not guarantees; the Fund has no operating history; no return is projected or guaranteed.</div></body>
+</html>
